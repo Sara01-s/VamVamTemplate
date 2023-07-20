@@ -1,2 +1,2 @@
 # VamVamTemplate
-Unity architecture to develop videogames easily.
+Unity architecture to easily develop videogames.
