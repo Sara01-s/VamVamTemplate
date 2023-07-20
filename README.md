@@ -1,5 +1,5 @@
 # VamVamTemplate
-Unity architecture to easily develop videogames.
+Unity architecture to easily develop video games.
 
 # Features
 - Scene Persistent Game Core object.
