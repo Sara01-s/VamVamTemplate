@@ -1,0 +1,21 @@
+{
+    "name": "VamVam.Editor",
+    "rootNamespace": "VamVam",
+    "references": [
+        "VamVam.Source.Utils",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "VamVam.Scripts.Localization",
+        "Unity.Localization.Editor"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

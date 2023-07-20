@@ -1,0 +1,25 @@
+{
+    "name": "VamVam.Scripts.Core",
+    "rootNamespace": "VamVam.Scripts",
+    "references": [
+        "GUID:def41ab038e9be044a8166a247ac1224",
+        "GUID:829d13e341fb9a84aa6568b6395b9d51",
+        "GUID:c41e75084b0046f4491d00f77bae9839",
+        "GUID:43729400f5d964341a311d366b1d7eec",
+        "GUID:2eaacd745e8077a42bfc260e4ba54de2",
+        "GUID:b4a0e9d9b7b6fd14a896bd9570c89622",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
+        "GUID:109d3eeb5e33c0d4fba8509b4ff94830",
+        "GUID:9e24947de15b9834991c9d8411ea37cf"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,28 @@
+.button-menu {
+    width: 90%;
+    height: 25%;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out-back;
+}
+
+.button-menu:hover {
+    background-color: rgb(153, 153, 153);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-back;
+    transition-property: all;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.button-menu:active {
+    background-color: rgb(0, 0, 0);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out-bounce;
+    transition-property: all;
+    padding-left: -5%;
+    padding-right: -5%;
+    padding-top: -5%;
+    padding-bottom: -5%;
+}

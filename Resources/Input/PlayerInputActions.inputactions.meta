@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bd13525796483e94aac7d1c147358eb6
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: 
+  wrapperClassName: 
+  wrapperCodeNamespace: VamVam.Resources.Input

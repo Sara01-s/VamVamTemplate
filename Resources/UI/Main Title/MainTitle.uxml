@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Resources/UI/Main%20Title/MainTitle.uss?fileID=7433441132597879392&amp;guid=9b6445e196270594781218641b569da9&amp;type=3#MainTitle" />
+    <ui:VisualElement name="LeftArea" style="width: 40%; height: 100%; margin-left: 0; left: 5%; background-color: rgba(64, 64, 64, 0.5);">
+        <ui:VisualElement name="GameTitle" style="align-items: center; width: 50%; height: 35%; left: 25%; top: 10%; -unity-background-image-tint-color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0); background-image: resource(&apos;Graphics/VamVam/VamVamStudios_Logo&apos;);" />
+        <ui:VisualElement name="MainButtons" style="flex-direction: column; align-items: center; top: 20%; justify-content: flex-start; width: 50%; height: 35%; left: 25%; flex-wrap: wrap;">
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="ButtonPlay" class="button-menu" />
+            <ui:Button text="Settings" display-tooltip-when-elided="true" name="ButtonSettings" class="button-menu" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="ButtonQuit" class="button-menu" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

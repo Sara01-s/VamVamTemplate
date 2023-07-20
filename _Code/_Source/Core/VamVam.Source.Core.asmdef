@@ -1,0 +1,17 @@
+{
+    "name": "VamVam.Source.Core",
+    "rootNamespace": "VamVam.Source",
+    "references": [
+        "GUID:829d13e341fb9a84aa6568b6395b9d51",
+        "GUID:b4a0e9d9b7b6fd14a896bd9570c89622"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

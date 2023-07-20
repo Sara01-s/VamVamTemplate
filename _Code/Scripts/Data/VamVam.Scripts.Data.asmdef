@@ -1,0 +1,17 @@
+{
+    "name": "VamVam.Scripts.Data",
+    "rootNamespace": "VamVam.Scripts",
+    "references": [
+        "GUID:b4a0e9d9b7b6fd14a896bd9570c89622",
+        "GUID:43729400f5d964341a311d366b1d7eec"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

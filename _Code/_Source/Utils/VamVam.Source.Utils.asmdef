@@ -1,0 +1,26 @@
+{
+    "name": "VamVam.Source.Utils",
+    "rootNamespace": "VamVam.Source",
+    "references": [
+        "GUID:0c752da273b17c547ae705acf0f2adf2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "GameCoreScarlett",
+        "GameCoreXboxOne",
+        "Lumin",
+        "PS4",
+        "PS5",
+        "Stadia",
+        "Switch",
+        "tvOS",
+        "XboxOne"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
