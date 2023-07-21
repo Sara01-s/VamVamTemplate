@@ -1,0 +1,3 @@
+[submodule "vamvamfmod"]
+	path = VamVamFMOD
+	url = https://github.com/Sara01-s/VamVamFMOD.git

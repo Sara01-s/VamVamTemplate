@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  - Grappable
+  - NotGrappable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - Puzzle
+  - Pusher
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 1642554951
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Middleground
+    uniqueID: 4177837683
+    locked: 0
+  - name: Props
+    uniqueID: 4197862593
+    locked: 0
+  - name: Player
+    uniqueID: 2047990091
+    locked: 0
+  - name: Foreground
+    uniqueID: 2069330539
+    locked: 0
