@@ -10,7 +10,7 @@ namespace VamVam.Scripts.Core {
         private ISceneService _sceneService;
 
         private void Awake() {
-            _sceneService = ServiceLocator.Instance.GetService<ISceneService>();
+            _sceneService = Services.Instance.GetService<ISceneService>();
         }
 
         private void OnEnable() {

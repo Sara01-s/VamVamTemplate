@@ -5,7 +5,7 @@ using System;
 namespace VamVam.Source.Utils {
 
     /// <summary> Math and Logic common utilities </summary>
-    public static class LogicUtils {
+    public static class Logic {
         
         /// <summary> Return true if the given value is between the min and max values. </summary>
         public static bool IsBetween(float value, float minValue, float maxValue) {

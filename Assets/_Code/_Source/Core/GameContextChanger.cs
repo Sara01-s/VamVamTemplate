@@ -28,7 +28,7 @@ namespace VamVam.Source.Core {
                     throw new ArgumentOutOfRangeException(nameof(newContext), newContext, "Invalid game context");
             }
 
-            LogUtils.SystemLog($"{LogUtils.Bold("Game context")} : {newContext}");
+            Logs.SystemLog($"{Logs.Bold("Game context")} : {newContext}");
 
             // This is the same as OnGameStateChanged(); but checking if the delegate is null
             OnGameContextChanged?.Invoke(previousContext, newContext);

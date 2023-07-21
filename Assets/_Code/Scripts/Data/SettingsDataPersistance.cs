@@ -24,7 +24,7 @@ namespace VamVam.Scripts.Data {
         }
 
         private void Awake() {
-            ServiceLocator.Instance.RegisterService<ISettingsDataService>(this);
+            Services.Instance.RegisterService<ISettingsDataService>(this);
 
             // Application persistentDataPath is the default data path in a Unity application
             _fileDataHandler = new FileDataHandler<SettingsData> (
@@ -34,7 +34,7 @@ namespace VamVam.Scripts.Data {
             );
         }
 
-        private void OnDisable() => ServiceLocator.Instance.UnRegisterService<ISettingsDataService>();
+        private void OnDisable() => Services.Instance.UnRegisterService<ISettingsDataService>();
 
         private void Start() {
             LoadSettingsData();
@@ -42,7 +42,7 @@ namespace VamVam.Scripts.Data {
 
         public void CreateNewSettingsData() {
             _settingsData = new SettingsData();
-            LogUtils.SystemLog(_prefix + LogUtils.Colorize("New settings created", LogColor.Lime));
+            Logs.SystemLog(_prefix + Logs.Colorize("New settings created", LogColor.Lime));
         }
 
 
@@ -51,12 +51,12 @@ namespace VamVam.Scripts.Data {
             _dataPersistantObjects = Object.FindObjectsOfType<MonoBehaviour>(true).OfType<ISettingsDataPersistant>().ToList();
 
             if (_settingsData is null) {
-                LogUtils.SystemLog(_prefix + "Settings data is null, creating new settings data...");
+                Logs.SystemLog(_prefix + "Settings data is null, creating new settings data...");
                 CreateNewSettingsData();
             }
 
             if (_dataPersistantObjects.Count == 0) {
-                LogUtils.SystemLog(_prefix + "No settings persistant objects were found in this scene.");
+                Logs.SystemLog(_prefix + "No settings persistant objects were found in this scene.");
                 return;
             }
 
@@ -64,7 +64,7 @@ namespace VamVam.Scripts.Data {
                 if (dataPersistantObj != null)
                     dataPersistantObj.LoadData(_settingsData);
 
-            LogUtils.SystemLog(_prefix + LogUtils.Colorize("Loading settings data...", LogColor.Aqua));
+            Logs.SystemLog(_prefix + Logs.Colorize("Loading settings data...", LogColor.Aqua));
         }
 
         public void SaveSettingsData() {
@@ -73,7 +73,7 @@ namespace VamVam.Scripts.Data {
                 return;
             }
         
-            LogUtils.SystemLog(_prefix + LogUtils.Colorize("Saving settings data...", LogColor.Orange));
+            Logs.SystemLog(_prefix + Logs.Colorize("Saving settings data...", LogColor.Orange));
 
             foreach (var dataPersistantObj in _dataPersistantObjects)
                 dataPersistantObj.SaveData(_settingsData);

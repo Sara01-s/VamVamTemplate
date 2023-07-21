@@ -10,8 +10,8 @@ namespace VamVam.Source.Utils {
     }
 
 
-    /// <summary> Unity's Debug class facade with extra methods </summary>
-    public static class LogUtils {
+    /// <summary> Unity's Debug class facade with extra utilities </summary>
+    public static class Logs {
 
         private static Dictionary<LogColor, string> ColorsMap = new Dictionary<LogColor, string> {
             { LogColor.Aqua,      "aqua"      },
@@ -38,6 +38,7 @@ namespace VamVam.Source.Utils {
             { LogColor.Yellow,    "yellow"    },
         };
 
+        // TODO - ? Maybe, to make this variables persistant between assembly recompilation, use: https://docs.unity3d.com/ScriptReference/Compilation.CompilationPipeline-compilationStarted.html
         public static bool SystemLogs;
         public static bool GameLogs = true;
 
@@ -46,19 +47,47 @@ namespace VamVam.Source.Utils {
             UnityEngine.Debug.Log(message);
         }
 
-        public static void Log(object message, bool conditioner) {
-            if (!conditioner) return;
+        public static void Log(object message, LogColor textColor = LogColor.Grey, bool bold = false, bool italic = false, int size = 1) {
+            if (!GameLogs) return;
+
+            string msg = message.ToString();
+            string result;
+
+            result = bold ? Bold(msg) : msg;
+            result = italic ? Italic(result) : result;
+            result = size == 1 ? Size(result, size) : result; 
+
+            UnityEngine.Debug.Log(Colorize(result.ToString(), textColor));
+        }
+
+        public static void Log(object message, bool condition) {
+            if (!GameLogs)  return;
+            if (!condition) return;
             UnityEngine.Debug.Log(message);
+        }
+
+        public static void Log(object message, bool condition, LogColor textColor = LogColor.Grey, bool bold = false, bool italic = false, int size = 1) {
+            if (!GameLogs)  return;
+            if (!condition) return;
+
+            string msg = message.ToString();
+            string result;
+
+            result = bold ? Bold(msg) : msg;
+            result = italic ? Italic(result) : result;
+            result = size == 1 ? Size(result, size) : result; 
+
+            UnityEngine.Debug.Log(Colorize(result, textColor));
         }
 
         public static void Print(object message) {
             if (!GameLogs) return;
-            UnityEngine.Debug.Log(message);
+            Log(message);
         }
 
-        public static void Print(object message, bool conditioner) {
-            if (!conditioner) return;
-            UnityEngine.Debug.Log(message);
+        public static void Print(object message, bool condition) {
+            if (!condition) return;
+            Log(message, condition);
         }
 
         public static void LogWarning(object message) {
@@ -71,10 +100,26 @@ namespace VamVam.Source.Utils {
             UnityEngine.Debug.LogError(message);
         }
 
+
+        // System Logs
         public static void SystemLog(object message) {
             if (!SystemLogs) return;
-            UnityEngine.Debug.Log(message);
+            Log(message);
         }
+
+        public static void SystemLog(object message, LogColor textColor = LogColor.Grey, bool bold = false, bool italic = false, int size = 1) {
+            if (!SystemLogs) return;
+
+            string msg = message.ToString();
+            string result;
+
+            result = bold ? Bold(msg) : msg;
+            result = italic ? Italic(result) : result;
+            result = size == 1 ? Size(result, size) : result; 
+
+            Log(Colorize(result, textColor));
+        }
+
 
         public static void SystemLogWarning(object message) {
             if (!SystemLogs) return;

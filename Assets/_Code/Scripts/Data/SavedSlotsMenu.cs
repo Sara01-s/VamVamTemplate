@@ -11,7 +11,7 @@ namespace VamVam.Scripts.Data {
 
         private void Awake() {
             _saveSlots = GetComponentsInChildren<SaveSlot>();
-            _gameDataService = ServiceLocator.Instance.GetService<IGameDataService>();
+            _gameDataService = Services.Instance.GetService<IGameDataService>();
         }
         
         private void OnEnable() => ActivateMenu();

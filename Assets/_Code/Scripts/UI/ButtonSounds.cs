@@ -15,7 +15,7 @@ namespace VamVam.Scripts.UI {
         private Button _thisButton;
 
         private void Awake() => _thisButton = GetComponent<Button>();
-        private void Start() => _audioService = ServiceLocator.Instance.GetService<IAudioService>();
+        private void Start() => _audioService = Services.Instance.GetService<IAudioService>();
         private void PlayClickSound() => _audioService.PlaySfx(_audioService.GetSound("UI_Button_Hover_01"));
 
         private void OnEnable() {

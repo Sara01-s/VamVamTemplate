@@ -17,7 +17,7 @@ namespace VamVam.Scripts.UI {
         private FMOD.Studio.Bus _bus;
 
         private void Awake() {
-            _audioService = ServiceLocator.Instance.GetService<IAudioService>();
+            _audioService = Services.Instance.GetService<IAudioService>();
             _changeTargetVolumeAction = new UnityAction<float>(ChangeTargetVolume);
             _bus = RuntimeManager.GetBus(_targetBus);
         }

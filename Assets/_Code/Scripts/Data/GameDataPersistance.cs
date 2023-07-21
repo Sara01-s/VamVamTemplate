@@ -25,7 +25,7 @@ namespace VamVam.Scripts.Data {
 
 
         private void Awake() {
-            ServiceLocator.Instance.RegisterService<IGameDataService>(this);
+            Services.Instance.RegisterService<IGameDataService>(this);
 
             // Application persistentDataPath is the default data path in a Unity application
             _fileDataHandler = new FileDataHandler<GameData> (
@@ -37,7 +37,7 @@ namespace VamVam.Scripts.Data {
 
         private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
         private void OnDisable() {
-            ServiceLocator.Instance.UnRegisterService<IGameDataService>();
+            Services.Instance.UnRegisterService<IGameDataService>();
             SceneManager.sceneLoaded -= OnSceneLoaded;
         } 
 
@@ -49,7 +49,7 @@ namespace VamVam.Scripts.Data {
 
         public void CreateNewGameData() {
             _gameData = new GameData();
-            LogUtils.SystemLog(PREFIX + LogUtils.Colorize("New game created", LogColor.Lime));
+            Logs.SystemLog(PREFIX + Logs.Colorize("New game created", LogColor.Lime));
         }
 
         public void LoadGameData() {
@@ -58,17 +58,17 @@ namespace VamVam.Scripts.Data {
 
             // Debugging purposes only
             if (_gameData == null && _initializeDataIfNull) {
-                LogUtils.SystemLogWarning(PREFIX + "Data created for development/debug");
+                Logs.SystemLogWarning(PREFIX + "Data created for development/debug");
                 CreateNewGameData();
             }
 
             if (_gameData == null) {
-                LogUtils.SystemLog(PREFIX + "No data was found, a New Game needs to be created. Maybe use Debug mode?");
+                Logs.SystemLog(PREFIX + "No data was found, a New Game needs to be created. Maybe use Debug mode?");
                 return;
             }
 
             if (_dataPersistantObjects.Count == 0) {
-                LogUtils.SystemLog(PREFIX + "No data persistant objects were found in this scene.");
+                Logs.SystemLog(PREFIX + "No data persistant objects were found in this scene.");
                 return;
             }
 
@@ -77,13 +77,13 @@ namespace VamVam.Scripts.Data {
                     dataPersistantObj.LoadData(_gameData);
             }
 
-            LogUtils.SystemLog(PREFIX + LogUtils.Colorize($"Loading game data from profile: {_selectedProfileID}", LogColor.Aqua));
+            Logs.SystemLog(PREFIX + Logs.Colorize($"Loading game data from profile: {_selectedProfileID}", LogColor.Aqua));
         }
 
         private void OnApplicationQuit() => SaveGameData();
         public void SaveGameData() {
             if (_gameData is null) {
-                LogUtils.SystemLogWarning(PREFIX + "No data was found, a New Game needs to be started before data can be saved.");
+                Logs.SystemLogWarning(PREFIX + "No data was found, a New Game needs to be started before data can be saved.");
                 return;
             }
         
@@ -92,13 +92,13 @@ namespace VamVam.Scripts.Data {
                 if (!dataObj.Equals(null)) {                // Using Object.Equals because null check for destroyed objects doesn't work :/
                     dataObj.SaveData(_gameData);
                 }
-                else LogUtils.SystemLogWarning(PREFIX + "One or more data objects are null");
+                else Logs.SystemLogWarning(PREFIX + "One or more data objects are null");
             }
 
             _fileDataHandler.SaveToFile(_gameData, _selectedProfileID);
 
 
-            LogUtils.SystemLog(PREFIX + LogUtils.Colorize($"Saving game data for profile: {_selectedProfileID}", LogColor.Orange));
+            Logs.SystemLog(PREFIX + Logs.Colorize($"Saving game data for profile: {_selectedProfileID}", LogColor.Orange));
         }
 
         public void DeleteProfileData(string profileID) {

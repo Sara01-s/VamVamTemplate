@@ -65,7 +65,7 @@ namespace VamVam.Source.Data {
                             loadedData = JsonUtility.FromJson<TData>(Encoding.UTF8.GetString(bytesToLoad));
                         }
                         catch (Exception e) {
-                            Debug.LogError(LogUtils.ErrorMessage("Error loading encrypted data from JSON", e));
+                            Debug.LogError(Logs.ErrorMessage("Error loading encrypted data from JSON", e));
                         }
 
                         return loadedData;
@@ -81,11 +81,11 @@ namespace VamVam.Source.Data {
                         loadedData = JsonUtility.FromJson<TData>(dataToLoad);
                     }
                     catch (Exception e) {
-                        Debug.LogError(LogUtils.ErrorMessage("Error loading data from JSON", e));
+                        Debug.LogError(Logs.ErrorMessage("Error loading data from JSON", e));
                     }
                 }
                 catch (Exception e) {
-                    Debug.LogError(LogUtils.ErrorMessage("Error ocurred when trying to load data from file ", e));
+                    Debug.LogError(Logs.ErrorMessage("Error ocurred when trying to load data from file ", e));
                 }
             }
 
@@ -127,7 +127,7 @@ namespace VamVam.Source.Data {
                 }
             }
             catch (Exception e) {
-                Debug.LogError(LogUtils.ErrorMessage("Error occurred when trying to save data to file ", e));
+                Debug.LogError(Logs.ErrorMessage("Error occurred when trying to save data to file ", e));
             }
         }
 
@@ -143,7 +143,7 @@ namespace VamVam.Source.Data {
                     Debug.LogWarning("Data System: Tried to delete data, but data was not found at path: " + fullPath);
             }
             catch (Exception e) {
-                Debug.LogError(LogUtils.ErrorMessage("Failed to delete profile data for profile ID: " + profileID, e));
+                Debug.LogError(Logs.ErrorMessage("Failed to delete profile data for profile ID: " + profileID, e));
             }
         }
 
@@ -163,7 +163,7 @@ namespace VamVam.Source.Data {
                 var profileData = LoadFromFile(profileID);
 
                 if (profileData != null) profileDictionary.Add(profileID, profileData);
-                else Debug.LogError($"Data System : Tried to load profile, but something went wrong, {LogUtils.Colorize("maybe the file is empty?", LogColor.Orange)}. Profile ID: {profileID}");
+                else Debug.LogError($"Data System : Tried to load profile, but something went wrong, {Logs.Colorize("maybe the file is empty?", LogColor.Orange)}. Profile ID: {profileID}");
             }
 
             return profileDictionary;

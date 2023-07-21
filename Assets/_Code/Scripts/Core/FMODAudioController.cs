@@ -27,7 +27,7 @@ namespace VamVam.Scripts.Core {
 #endif
 
         private void Awake() {
-            ServiceLocator.Instance.RegisterService<IAudioService>(this);
+            Services.Instance.RegisterService<IAudioService>(this);
 
 #if UNITY_WEBGL || !UNITY_EDITOR
             foreach(var bank in _fmodBanks) {
@@ -43,7 +43,7 @@ namespace VamVam.Scripts.Core {
         }
 
         private void OnDisable() {
-            ServiceLocator.Instance.UnRegisterService<IAudioService>();
+            Services.Instance.UnRegisterService<IAudioService>();
         }
 
         public void LoadData(SettingsData settingsData) {
@@ -70,7 +70,7 @@ namespace VamVam.Scripts.Core {
             var result = bus.getVolume(out var volume);
 
             if (result == FMOD.RESULT.ERR_DSP_NOTFOUND) {
-                LogUtils.SystemLogWarning($"Failed to get {bus.ToString()} volume. BUS NOT FOUND");
+                Logs.SystemLogWarning($"Failed to get {bus.ToString()} volume. BUS NOT FOUND");
                 return 0.0f;
             }
             else return volume;

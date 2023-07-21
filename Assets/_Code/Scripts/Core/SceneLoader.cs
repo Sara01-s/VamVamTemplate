@@ -14,12 +14,12 @@ namespace VamVam.Scripts.Core {
         private ISettingsDataService _settingsDataService;
         
         private void Awake() {
-            ServiceLocator.Instance.RegisterService<ISceneService>(this);
-            _gameDataService = ServiceLocator.Instance.GetService<IGameDataService>();
-            _settingsDataService = ServiceLocator.Instance.GetService<ISettingsDataService>();
+            Services.Instance.RegisterService<ISceneService>(this);
+            _gameDataService = Services.Instance.GetService<IGameDataService>();
+            _settingsDataService = Services.Instance.GetService<ISettingsDataService>();
         }
         private void OnDisable() {
-            ServiceLocator.Instance.UnRegisterService<ISceneService>();
+            Services.Instance.UnRegisterService<ISceneService>();
         }
 
         public void LoadSceneInstantWithSave(int index) {

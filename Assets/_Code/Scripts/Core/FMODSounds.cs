@@ -17,7 +17,7 @@ namespace VamVam.Scripts.Core {
                 if (!_registeredSounds.TryAdd(GetSoundName(sound.Path), sound)) 
                     Debug.LogError("Failed to load sound: " + sound.Path);
                 else 
-                    LogUtils.SystemLog(PREFIX + "Sound " + GetSoundName(sound.Path) + " registered");
+                    Logs.SystemLog(PREFIX + "Sound " + GetSoundName(sound.Path) + " registered");
             }
         }
 
