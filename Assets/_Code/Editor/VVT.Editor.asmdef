@@ -1,0 +1,21 @@
+{
+    "name": "VVT.Editor",
+    "rootNamespace": "VVT",
+    "references": [
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.Localization.Editor",
+        "VVT.Runtime",
+        "VVT"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

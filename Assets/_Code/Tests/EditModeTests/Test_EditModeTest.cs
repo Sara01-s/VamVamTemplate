@@ -1,9 +1,8 @@
-using VamVam.Scripts.Utils;
 using NUnit.Framework;
 using NSubstitute;
 using UnityEngine;
 
-namespace VamVam.EditModeTests {
+namespace VVT.EditorTests {
 
     public class Test_EditModeTest {
         

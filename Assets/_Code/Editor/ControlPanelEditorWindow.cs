@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEditor;
 using System;
 
-namespace VamVam.Editor {
+namespace VVT.Editor {
 
     public class ControlPanelEditorWindow : EditorWindow {
         [MenuItem("VamVam/Control Panel")]

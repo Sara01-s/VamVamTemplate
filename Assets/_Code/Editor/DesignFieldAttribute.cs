@@ -1,6 +1,6 @@
 using System;
 
-namespace VamVam.Editor {
+namespace VVT.Editor {
 
     [AttributeUsage(AttributeTargets.Field)]
     public sealed class DesignFieldAttribute : Attribute {

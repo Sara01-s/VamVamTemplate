@@ -4,7 +4,7 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 
-namespace VamVam.PlayModeTests {
+namespace VVT.RuntimeTests {
 
     internal sealed class Test_UIToggler {
 

@@ -1,0 +1,16 @@
+{
+    "name": "VVT.Data",
+    "rootNamespace": "VVT",
+    "references": [
+        "GUID:c41e75084b0046f4491d00f77bae9839"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,7 +1,7 @@
 using UnityEditor.Localization.Plugins.Google;
 using UnityEditor;
 
-namespace VamVam.Editor {
+namespace VVT.Editor {
     
     internal sealed class LocalizationEditor {
         private const string SpreadSheetID = "1R56tGoEMf60AkELfKBfr763a7dz4G2VoLkIjkt0zDFQ";

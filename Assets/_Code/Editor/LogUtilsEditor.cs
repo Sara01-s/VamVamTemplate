@@ -1,7 +1,7 @@
-using VamVam.Source.Utils;
+using VVT.Runtime;
 using UnityEditor;
 
-namespace VamVam.Editor {
+namespace VVT.Editor {
     
     internal sealed class LogsEditor {
         [MenuItem("VamVam/System/Toggle System Logs")]

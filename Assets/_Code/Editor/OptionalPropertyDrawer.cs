@@ -1,8 +1,8 @@
-using VamVam.Source.Utils;
 using UnityEditor;
 using UnityEngine;
+using VVT;
 
-namespace VamVam.Editor {
+namespace VVT.Editor {
 
     /* Original from: https://gist.github.com/aarthificial/f2dbb58e4dbafd0a93713a380b9612af */
     [CustomPropertyDrawer(typeof(Optional<>))]
