@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae85293fcc32494b8ba9a3c3b5384f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneInitContext: 0
+  _sceneInitContext: {fileID: 11400000, guid: e2c273e85b9f29d48ac70ec0e76dcfec, type: 2}
   _delay:
     _enabled: 1
     _value: 0.01

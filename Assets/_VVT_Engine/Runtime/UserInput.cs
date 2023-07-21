@@ -6,12 +6,13 @@ using VVT;
 
 namespace VVT.Runtime {
 
-    public sealed class UserInput : MonoBehaviour {
+    public sealed class UserInput : MonoBehaviour , IInputService {
 
         [SerializeField] private bool _startWithInputEnabled;
 
         private static event Action<InputActionMap> OnActionMapChanged;
         private static PlayerInputActions _playerInput;
+        private IGameContextService _gameContext;
 
         public static float LastInteraction { get; private set; } = 0.0f;
         public static bool ActionPressed { get; private set; } = false;
@@ -29,18 +30,23 @@ namespace VVT.Runtime {
         private InputAction _inputSpace;
 
         private void Awake() {
+
+            Services.Instance.RegisterService<IInputService>(this);
+
+            _gameContext = Services.Instance.GetService<IGameContextService>();
             _playerInput = new PlayerInputActions();
+
             ToggleActionMap(_playerInput.Gameplay);
         }
 
 
         private void Start() {
             if (_startWithInputEnabled)
-                GameContextData.PlayerHasControl = true;
+                _gameContext.Data.PlayerHasControl = true;
         }
 
         private void Update() {
-            if (!GameContextData.PlayerHasControl) return;
+            if (!_gameContext.Data.PlayerHasControl) return;
 
             ActionPressed = _inputInteraction.WasPerformedThisFrame();
             JumpReleased = _inputSpace.WasReleasedThisFrame();
@@ -53,7 +59,7 @@ namespace VVT.Runtime {
 
         // Event dispatch
         private void DispatchPauseInput(InputAction.CallbackContext context) {
-            if (GameContextData.CanToggleGamePause)
+            if (_gameContext.Data.CanToggleGamePause)
                 EventDispatcher.OnPauseInput.Invoke();
         }
 
@@ -80,7 +86,7 @@ namespace VVT.Runtime {
             _inputEscape        .Enable();
             _inputMovement      .Enable();
             _inputMouseDelta    .Enable();
-            _inputSpace       .Enable();
+            _inputSpace         .Enable();
 
             _inputPause.performed           += DispatchPauseInput;
             _inputInteraction.performed     += DispatchInteractionInput;
@@ -88,22 +94,25 @@ namespace VVT.Runtime {
         }
 
         private void OnDisable() {
+            Services.Instance.UnRegisterService<IInputService>();
+
             _inputPause         .Disable();
             _inputInteraction   .Disable();
             _inputEscape        .Disable();
             _inputMovement      .Disable();
             _inputMouseDelta    .Disable();
-            _inputSpace       .Disable();
+            _inputSpace         .Disable();
 
             _inputPause.performed           -= DispatchPauseInput;
             _inputInteraction.performed     -= DispatchInteractionInput;
             _inputEscape.performed          -= DispatchEscapeInput;
         }
 
-        private static void ToggleActionMap(InputActionMap actionMap) {
+        public void ToggleActionMap(InputActionMap actionMap) {
             if (actionMap.enabled) return;
 
-            _playerInput.Disable();
+
+
             OnActionMapChanged?.Invoke(actionMap);
             actionMap.Enable();
         }

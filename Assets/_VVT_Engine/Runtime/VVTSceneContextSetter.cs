@@ -1,5 +1,4 @@
 using UnityEngine;
-using VVT;
 
 namespace VVT.Runtime {
 
@@ -7,6 +6,12 @@ namespace VVT.Runtime {
         
         [SerializeField] private GameContext _sceneInitContext;
         [SerializeField] private Optional<float> _delay;
+
+        private IGameContextService _gameContext;
+
+        private void Awake() {
+            _gameContext = Services.Instance.GetService<IGameContextService>();
+        }
 
         private void Start() {
             if (_delay.Enabled) {
@@ -18,7 +23,7 @@ namespace VVT.Runtime {
         }
 
         private void UpdateContext() {
-            GameContextUpdater.UpdateGameContext(GameContextData.PreviousContext, _sceneInitContext);
+            _gameContext.UpdateGameContext(_gameContext.Data.PreviousContext, _sceneInitContext);
         }
 
 

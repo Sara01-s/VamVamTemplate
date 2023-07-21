@@ -1,6 +1,5 @@
 using UnityEngine.Events;
 using UnityEngine;
-using VVT;
 
 namespace VVT.Runtime {
 
@@ -14,18 +13,16 @@ namespace VVT.Runtime {
 
         [Header("Optional")]
         [SerializeField] private UnityEvent CustomEvent;
+        
+        private IGameContextService _gameContext;
 
         private void Awake() {
-            gameObject.SetActive(GameContextData.Context == ListenTo);
+            _gameContext = Services.Instance.GetService<IGameContextService>();
+            gameObject.SetActive(_gameContext.Data.CurrentContext == ListenTo);
         }
 
-        private void OnEnable() {
-            GameContextUpdater.OnGameContextChanged += OnContextChange;
-        }
-
-        private void OnDisable() {
-            GameContextUpdater.OnGameContextChanged -= OnContextChange;
-        }
+        private void OnEnable () => _gameContext.OnContextChanged += OnContextChange;
+        private void OnDisable() => _gameContext.OnContextChanged -= OnContextChange;
 
         private void OnContextChange(GameContext previous, GameContext newContext) {
             if (newContext == ListenTo) {

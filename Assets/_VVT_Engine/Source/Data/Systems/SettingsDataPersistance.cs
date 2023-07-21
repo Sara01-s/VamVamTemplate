@@ -5,7 +5,7 @@ using VVT;
 
 namespace VVT.Data {
 
-    public sealed class SettingsDataPersistance : MonoBehaviour, IDataService<SettingsData> {
+    public sealed class SettingsDataPersistance : MonoBehaviour, ISettingsDataService {
 
         [Header("File Storage Configuration")]
         [SerializeField] private string _dataFileFullName = "settings.vvg";
@@ -23,7 +23,7 @@ namespace VVT.Data {
         }
 
         private void Awake() {
-            Services.Instance.RegisterService<IDataService<SettingsData>>(this);
+            Services.Instance.RegisterService<ISettingsDataService>(this);
 
             // Application persistentDataPath is the default data path in a Unity application
             _fileDataHandler = new FileDataHandler<SettingsData> (
@@ -33,7 +33,7 @@ namespace VVT.Data {
             );
         }
 
-        private void OnDisable() => Services.Instance.UnRegisterService<IDataService<SettingsData>>();
+        private void OnDisable() => Services.Instance.UnRegisterService<ISettingsDataService>();
 
         private void Start() {
             LoadData();

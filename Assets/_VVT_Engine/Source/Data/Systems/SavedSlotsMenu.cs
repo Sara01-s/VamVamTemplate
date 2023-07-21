@@ -6,26 +6,26 @@ namespace VVT.Data {
     internal sealed class SavedSlotsMenu : MonoBehaviour {
 
         private SaveSlot[] _saveSlots;
-        private IProfileDataService<GameData> _gameDataService;
+        private IGameDataService _gameDataService;
 
         private void Awake() {
             _saveSlots = GetComponentsInChildren<SaveSlot>();
-            _gameDataService = Services.Instance.GetService<IProfileDataService<GameData>>();
+            _gameDataService = Services.Instance.GetService<IGameDataService>();
         }
         
         private void OnEnable() => ActivateMenu();
 
 
-        public void ContinueSlotGame(SaveSlot saveSlot) {
+        public void ContinueGameSlot(SaveSlot saveSlot) {
             _gameDataService.ChangeSelectedProfileID(saveSlot.ProfileID);
         }
 
-        public void CreateNewGameOnSlot(SaveSlot saveSlot) {
+        public void CreateNewGameSlot(SaveSlot saveSlot) {
             _gameDataService.ChangeSelectedProfileID(saveSlot.ProfileID);
             _gameDataService.CreateNewData();
         }
 
-        public void ClearSlotData(SaveSlot saveSlot) {
+        public void ClearGameSlotData(SaveSlot saveSlot) {
             _gameDataService.DeleteProfileData(saveSlot.ProfileID);
             ActivateMenu();
         }
@@ -47,7 +47,7 @@ namespace VVT.Data {
                     saveSlot.SetInteractable(false);
             }
 
-            // Maybe, back button has to be disable as well, but idk when to active it again...
+            // ? Maybe, back button has to be disable as well, but idk when to active it again...
         }
 
     }

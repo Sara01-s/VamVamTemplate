@@ -6,7 +6,7 @@ using VVT;
 
 namespace VVT.Data {
 
-    public sealed class GameDataPersistance : MonoBehaviour, IProfileDataService<GameData> {
+    public sealed class GameDataPersistance : MonoBehaviour, IGameDataService {
 
         [Header("File Storage Configuration")]
         [SerializeField] private string _dataFileFullName = "data.vvg";
@@ -24,7 +24,7 @@ namespace VVT.Data {
 
 
         private void Awake() {
-            Services.Instance.RegisterService<IProfileDataService<GameData>>(this);
+            Services.Instance.RegisterService<IGameDataService>(this);
 
             // Application persistentDataPath is the default data path in a Unity application
             _fileDataHandler = new FileDataHandler<GameData> (
@@ -36,7 +36,7 @@ namespace VVT.Data {
 
         private void OnEnable() => SceneManager.sceneLoaded += OnSceneLoaded;
         private void OnDisable() {
-            Services.Instance.UnRegisterService<IProfileDataService<GameData>>();
+            Services.Instance.UnRegisterService<IGameDataService>();
             SceneManager.sceneLoaded -= OnSceneLoaded;
         } 
 

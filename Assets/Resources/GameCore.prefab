@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 755054514886055422}
   - component: {fileID: 1438152758740046210}
   - component: {fileID: 2639543577631101673}
-  - component: {fileID: 7780020960561211740}
+  - component: {fileID: 3075341966690981645}
   m_Layer: 5
   m_Name: Button - Back
   m_TagString: Untagged
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
         m_MethodName: BackToMainTitle
         m_Mode: 1
@@ -211,7 +211,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7780020960561211740
+--- !u!114 &3075341966690981645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 146322195457060296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &362256086209351000
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 4942067045356694412}
   - component: {fileID: 6632041180713228582}
   - component: {fileID: 3579814212001724861}
-  - component: {fileID: 5760956445365961959}
+  - component: {fileID: 590790735112389799}
   m_Layer: 5
   m_Name: Button - Resume
   m_TagString: Untagged
@@ -346,8 +346,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
         m_MethodName: ToggleGamePause
         m_Mode: 1
         m_Arguments:
@@ -358,7 +358,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5760956445365961959
+--- !u!114 &590790735112389799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 362256086209351000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &384267019856296795
@@ -886,7 +886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: 7
+  <ListenTo>k__BackingField: {fileID: 0}
   <EnableOnContext>k__BackingField: 1
   CustomEvent:
     m_PersistentCalls:
@@ -1378,7 +1378,7 @@ GameObject:
   - component: {fileID: 7780920739201089258}
   - component: {fileID: 7595487579335565584}
   - component: {fileID: 5110125302346613370}
-  - component: {fileID: 606455451699332023}
+  - component: {fileID: 6520724052926095914}
   m_Layer: 5
   m_Name: Button - Tutorial
   m_TagString: Untagged
@@ -1501,7 +1501,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &606455451699332023
+--- !u!114 &6520724052926095914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003173293436674122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1246197630496305701
@@ -1522,9 +1522,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8750765534025022686}
+  - component: {fileID: 6341058304526386007}
   - component: {fileID: 7064044861200514369}
   m_Layer: 0
-  m_Name: GameContextDispatcher
+  m_Name: Game Context
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1545,6 +1546,21 @@ Transform:
   m_Father: {fileID: 1823152003124893913}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6341058304526386007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246197630496305701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b909c35daed3fc41aa1900df41e5fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 11400000, guid: 0d9438ac8b65a664d803cca5b0f57a5d, type: 2}
+  _playingContext: {fileID: 11400000, guid: af66eed6f1e586b44a855a8570617d43, type: 2}
+  _pauseContext: {fileID: 11400000, guid: 0ad5ed35dd5bd1b42872d29351867812, type: 2}
 --- !u!114 &7064044861200514369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1679,7 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8582902686712726150}
   - component: {fileID: 2226760388606638839}
-  - component: {fileID: 72435198465723476}
+  - component: {fileID: 1756603868942045759}
   m_Layer: 5
   m_Name: Slider - Master volume
   m_TagString: Untagged
@@ -1762,7 +1778,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &72435198465723476
+--- !u!114 &1756603868942045759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1771,7 +1787,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1413930661642997746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0329164f97b80934e960f2a4fcc2b67e, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b8cea2f68942341a038c240c4f87c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _targetBus: Master
@@ -2038,7 +2054,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3130541008699727396}
   - component: {fileID: 1571957285791678112}
-  - component: {fileID: 6441304030939039479}
+  - component: {fileID: 6178094937443217406}
   m_Layer: 5
   m_Name: Slider - Ambience Volume
   m_TagString: Untagged
@@ -2121,7 +2137,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6441304030939039479
+--- !u!114 &6178094937443217406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2130,7 +2146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1860225299960807681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0329164f97b80934e960f2a4fcc2b67e, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b8cea2f68942341a038c240c4f87c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _targetBus: Ambience
@@ -2147,7 +2163,6 @@ GameObject:
   - component: {fileID: 5568718571504814102}
   - component: {fileID: 8241443057076999297}
   - component: {fileID: 1182924314711070598}
-  - component: {fileID: 9059330790597945257}
   m_Layer: 5
   m_Name: Button - Main Menu
   m_TagString: Untagged
@@ -2258,9 +2273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
-        m_MethodName: BackToMainTitle
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
+        m_MethodName: GoToMainTitle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2270,18 +2285,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9059330790597945257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892561946954910236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1969761606990756595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,7 +2640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: 0
+  <ListenTo>k__BackingField: {fileID: 11400000, guid: e2c273e85b9f29d48ac70ec0e76dcfec, type: 2}
   <EnableOnContext>k__BackingField: 1
   CustomEvent:
     m_PersistentCalls:
@@ -2990,7 +2993,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &6636908358845589143
@@ -3509,7 +3512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: 9
+  <ListenTo>k__BackingField: {fileID: 0}
   <EnableOnContext>k__BackingField: 1
   CustomEvent:
     m_PersistentCalls:
@@ -3776,7 +3779,7 @@ GameObject:
   - component: {fileID: 6341096584632724223}
   - component: {fileID: 1131603847409818653}
   - component: {fileID: 9207315499009099708}
-  - component: {fileID: 6071185974938196329}
+  - component: {fileID: 6035891389553415647}
   m_Layer: 5
   m_Name: Button - Play
   m_TagString: Untagged
@@ -3888,9 +3891,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.Scripts.Core.UIMediator, VamVam.Scripts.Core
-        m_MethodName: LoadGameScene
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
+        m_MethodName: GoToGameScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3900,7 +3903,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6071185974938196329
+--- !u!114 &6035891389553415647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3909,7 +3912,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3706282435655400668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3831217871660409457
@@ -4045,7 +4048,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &4584039559877867911
@@ -4106,7 +4109,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8434284077142565116
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4182,7 +4185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: 5
+  <ListenTo>k__BackingField: {fileID: 11400000, guid: 0ad5ed35dd5bd1b42872d29351867812, type: 2}
   <EnableOnContext>k__BackingField: 1
   CustomEvent:
     m_PersistentCalls:
@@ -4852,7 +4855,7 @@ GameObject:
   - component: {fileID: 2213134387314051536}
   - component: {fileID: 93927120141746862}
   - component: {fileID: 9061797510017154675}
-  - component: {fileID: 1410082968411552774}
+  - component: {fileID: 7308644229662431416}
   m_Layer: 5
   m_Name: Button - Back
   m_TagString: Untagged
@@ -4963,9 +4966,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
-        m_MethodName: SettingsBack
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
+        m_MethodName: GoToMainTitleFromSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4975,7 +4978,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1410082968411552774
+--- !u!114 &7308644229662431416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4984,7 +4987,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5216180222978173264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5597619645606733124
@@ -4997,7 +5000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3539296284668730876}
   - component: {fileID: 3672593348400752174}
-  - component: {fileID: 4506567019517543659}
+  - component: {fileID: 4427120503155538821}
   m_Layer: 5
   m_Name: Slider - Music Volume
   m_TagString: Untagged
@@ -5080,7 +5083,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4506567019517543659
+--- !u!114 &4427120503155538821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5089,7 +5092,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5597619645606733124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0329164f97b80934e960f2a4fcc2b67e, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b8cea2f68942341a038c240c4f87c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _targetBus: Music
@@ -5184,9 +5187,9 @@ GameObject:
   - component: {fileID: 7509947386161862160}
   - component: {fileID: 2859034713927015434}
   - component: {fileID: 125699177170708749}
-  - component: {fileID: 5597048495183367455}
+  - component: {fileID: 788867941543401769}
   m_Layer: 5
-  m_Name: Main Canvas
+  m_Name: UI Controller
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5280,7 +5283,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5597048495183367455
+--- !u!114 &788867941543401769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5289,9 +5292,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5767350143268115857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e59ad691515604492be10eb2b0a081, type: 3}
+  m_Script: {fileID: 11500000, guid: b4172e5e8c8f8f1438a95fc906a47353, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pauseContext: {fileID: 11400000, guid: 0ad5ed35dd5bd1b42872d29351867812, type: 2}
+  _settingsContext: {fileID: 11400000, guid: 286e75b910c809f4e9ffa7a783cbd0fa, type: 2}
+  _mainTitleContext: {fileID: 11400000, guid: e2c273e85b9f29d48ac70ec0e76dcfec, type: 2}
+  _saveSlotsContext: {fileID: 11400000, guid: 15277193cc98cb045930a3064833b195, type: 2}
 --- !u!1 &5885202594929622425
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,7 +5421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 31564774050703662}
   - component: {fileID: 2921940108181578035}
-  - component: {fileID: 1467900782103968583}
+  - component: {fileID: 7632329159761053509}
   m_Layer: 5
   m_Name: Slider - Game Sfx Volume
   m_TagString: Untagged
@@ -5497,7 +5504,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1467900782103968583
+--- !u!114 &7632329159761053509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5506,7 +5513,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5916133832092042053}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0329164f97b80934e960f2a4fcc2b67e, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b8cea2f68942341a038c240c4f87c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _targetBus: GameSFX
@@ -5853,6 +5860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c45bd1e2f4537479246a0638c1a058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onSceneLoadChangeTo: {fileID: 0}
 --- !u!1 &6327236821604192757
 GameObject:
   m_ObjectHideFlags: 0
@@ -5949,7 +5957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: 2
+  <ListenTo>k__BackingField: {fileID: 11400000, guid: 286e75b910c809f4e9ffa7a783cbd0fa, type: 2}
   <EnableOnContext>k__BackingField: 1
   CustomEvent:
     m_PersistentCalls:
@@ -6528,7 +6536,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1828807704324282310
@@ -6630,7 +6638,7 @@ GameObject:
   - component: {fileID: 9214109907375656535}
   - component: {fileID: 3513367825898810127}
   - component: {fileID: 5540839780167041425}
-  - component: {fileID: 7477325339533937479}
+  - component: {fileID: 8156525007282449107}
   m_Layer: 5
   m_Name: Button - Quit
   m_TagString: Untagged
@@ -6741,19 +6749,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5767350143268115857}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7477325339533937479
+--- !u!114 &8156525007282449107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6762,7 +6770,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6822581741790197703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6828723443017065803
@@ -6777,7 +6785,7 @@ GameObject:
   - component: {fileID: 7250164354062934964}
   - component: {fileID: 3886991861453326541}
   - component: {fileID: 8089961151881154097}
-  - component: {fileID: 7398926385695365398}
+  - component: {fileID: 8397046413462500037}
   m_Layer: 5
   m_Name: Button - Settings
   m_TagString: Untagged
@@ -6888,9 +6896,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
-        m_MethodName: OpenSettingsMenu
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
+        m_MethodName: GoToMainTitleFromSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6900,7 +6908,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7398926385695365398
+--- !u!114 &8397046413462500037
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6909,7 +6917,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6828723443017065803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6983243036625524618
@@ -6924,7 +6932,7 @@ GameObject:
   - component: {fileID: 538891366685140277}
   - component: {fileID: 6768954465588363276}
   - component: {fileID: 4985256242916660990}
-  - component: {fileID: 2553562968175514649}
+  - component: {fileID: 1709721240066803007}
   m_Layer: 5
   m_Name: Button - Restart
   m_TagString: Untagged
@@ -7035,8 +7043,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.Scripts.Core.UIToggler, VamVam.Scripts.Core
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
         m_MethodName: RestartScene
         m_Mode: 1
         m_Arguments:
@@ -7047,7 +7055,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2553562968175514649
+--- !u!114 &1709721240066803007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7056,7 +7064,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6983243036625524618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7420701763086726930
@@ -7515,7 +7523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
         m_MethodName: BackToMainTitle
         m_Mode: 1
@@ -8674,7 +8682,7 @@ GameObject:
   - component: {fileID: 3683076109524701476}
   - component: {fileID: 5537652771156834850}
   - component: {fileID: 6799226103362778435}
-  - component: {fileID: 3075885006501264019}
+  - component: {fileID: 6087344862322762674}
   m_Layer: 5
   m_Name: Button - Settings
   m_TagString: Untagged
@@ -8785,9 +8793,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5597048495183367455}
-        m_TargetAssemblyTypeName: VamVam.UIToggler, Assembly-CSharp
-        m_MethodName: OpenSettingsMenu
+      - m_Target: {fileID: 788867941543401769}
+        m_TargetAssemblyTypeName: VVT.Runtime.UIController, VVT.Runtime
+        m_MethodName: GoToSettingsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8797,7 +8805,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3075885006501264019
+--- !u!114 &6087344862322762674
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8806,7 +8814,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8656364034364978294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8940148630811326684
@@ -8965,7 +8973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: 3
+  <ListenTo>k__BackingField: {fileID: 11400000, guid: 15277193cc98cb045930a3064833b195, type: 2}
   <EnableOnContext>k__BackingField: 0
   CustomEvent:
     m_PersistentCalls:
@@ -9103,7 +9111,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &6269207538480322408
@@ -9363,14 +9371,18 @@ PrefabInstance:
     - target: {fileID: 2715226901970476426, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 5597048495183367455}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2715226901970476426, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ContinueGameSlot
+      objectReference: {fileID: 0}
     - target: {fileID: 2715226901970476426, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadGameScene
       objectReference: {fileID: 0}
     - target: {fileID: 2715226901970476426, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VamVam.Scripts.Data.SavedSlotsMenu, VamVam.Scripts.Data
+      value: VVT.Data.SavedSlotsMenu, VVT.Data
       objectReference: {fileID: 0}
     - target: {fileID: 2715226901970476426, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -9378,7 +9390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2715226901970476426, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: VamVam.Scripts.Data.SaveSlot, VamVam.Scripts.Data
+      value: VVT.Data.SaveSlot, VVT.Data
       objectReference: {fileID: 0}
     - target: {fileID: 3183523784462265699, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_fontSize
@@ -9609,12 +9621,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7343537865779009087}
     - target: {fileID: 6471495974925070689, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearGameSlotData
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471495974925070689, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VamVam.Scripts.Data.SavedSlotsMenu, VamVam.Scripts.Data
+      value: VVT.Data.SavedSlotsMenu, VVT.Data
       objectReference: {fileID: 0}
     - target: {fileID: 6471495974925070689, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: VamVam.Scripts.Data.SaveSlot, VamVam.Scripts.Data
+      value: VVT.Data.SaveSlot, VVT.Data
       objectReference: {fileID: 0}
     - target: {fileID: 6473785972179145728, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_IsActive
@@ -9645,6 +9661,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300020, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
     - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -9655,14 +9675,14 @@ PrefabInstance:
     - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 5597048495183367455}
+      objectReference: {fileID: 0}
     - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: LoadGameScene
       objectReference: {fileID: 0}
     - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: VamVam.Scripts.Data.SavedSlotsMenu, VamVam.Scripts.Data
+      value: VVT.Data.SavedSlotsMenu, VVT.Data
       objectReference: {fileID: 0}
     - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
@@ -9670,7 +9690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7284265566706971877, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: VamVam.Scripts.Data.SaveSlot, VamVam.Scripts.Data
+      value: VVT.Data.SaveSlot, VVT.Data
       objectReference: {fileID: 0}
     - target: {fileID: 7726380993471710411, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
       propertyPath: m_IsActive
@@ -9692,7 +9712,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7726380993471710411, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
   m_PrefabInstance: {fileID: 2662865443524326011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4570704514497127723
+--- !u!114 &2863854551154315877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9701,7 +9721,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5750525600856553136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7769380745504903819 stripped
@@ -9709,7 +9729,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5703251050089832688, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
   m_PrefabInstance: {fileID: 2662865443524326011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5432062401340322499
+--- !u!114 &6544440846434604035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9718,7 +9738,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7769380745504903819}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9017301610162497147 stripped
@@ -9726,7 +9746,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6473785972179145728, guid: 15c212bf2dd691843b81ab6f766b011e, type: 3}
   m_PrefabInstance: {fileID: 2662865443524326011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2687582000415304363
+--- !u!114 &4458720197923875115
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9735,6 +9755,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9017301610162497147}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b18f2f747b3cc2e4b85785f7c3fa46f8, type: 3}
+  m_Script: {fileID: 11500000, guid: cd58528e529201e4fa27d86948cfa951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

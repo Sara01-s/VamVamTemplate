@@ -10,17 +10,15 @@ namespace VVT.Runtime {
 
         private List<VVTGameContextEvent> _toggleListeners;
 
-        private void OnEnable() {
-            GameContextUpdater.OnGameContextChanged += ToggleContextListeners;
-        }
+        private IGameContextService _gameContext;
 
-        private void OnDisable() {
-            GameContextUpdater.OnGameContextChanged -= ToggleContextListeners;
-        }
+        private void OnEnable () => _gameContext.OnContextChanged += ToggleContextListeners;
+        private void OnDisable() => _gameContext.OnContextChanged -= ToggleContextListeners;
 
         private void Awake() {
             GameContextListeners = Object.FindObjectsOfType<VVTGameContextEvent>(true).ToList();
             _toggleListeners = GameContextListeners.FindAll((listener) => listener.EnableOnContext);
+            _gameContext = Services.Instance.GetService<IGameContextService>();
         }
 
         private void ToggleContextListeners(GameContext previous, GameContext newContext) {

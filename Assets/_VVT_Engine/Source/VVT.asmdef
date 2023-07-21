@@ -2,7 +2,8 @@
     "name": "VVT",
     "rootNamespace": "",
     "references": [
-        "FMODUnity"
+        "FMODUnity",
+        "Unity.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
