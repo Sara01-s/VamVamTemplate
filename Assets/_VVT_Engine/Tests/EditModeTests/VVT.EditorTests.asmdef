@@ -3,8 +3,7 @@
     "rootNamespace": "VVT",
     "references": [
         "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner",
-        "VamVam.Scripts.Utils"
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

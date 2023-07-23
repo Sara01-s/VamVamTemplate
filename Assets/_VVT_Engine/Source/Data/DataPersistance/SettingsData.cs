@@ -9,24 +9,21 @@ namespace VVT.Data {
         public float AudioMasterVolume;
         public float AudioAmbienceVolume;
         public float AudioMusicVolume;
-        public float AudioGameSfxVolume;
-        public float AudioUISfxVolume;
+        public float AudioSFXVolume;
 
         /// <summary> When a new SettingsData is created, the settings values are set to defaults. </summary>
         public SettingsData() {
             AudioMasterVolume   = 1f;
             AudioAmbienceVolume = 0.5f;
             AudioMusicVolume    = 0.5f;
-            AudioGameSfxVolume  = 0.5f;
-            AudioUISfxVolume    = 0.5f;
+            AudioSFXVolume  = 0.5f;
         }
 
-        internal void PrintData() {
-            Debug.Log("Game Data : AudioMasterVolume: "   + AudioMasterVolume);
-            Debug.Log("Game Data : AudioAmbienceVolume: " + AudioAmbienceVolume);
-            Debug.Log("Game Data : AudioMusicVolume: "    + AudioMusicVolume);
-            Debug.Log("Game Data : AudioGameSfxVolume: "  + AudioGameSfxVolume);
-            Debug.Log("Game Data : AudioUISfxVolume: "    + AudioUISfxVolume);
+        public void PrintData() {
+            Debug.Log("Settings Data : AudioMasterVolume: "   + AudioMasterVolume);
+            Debug.Log("Settings Data : AudioAmbienceVolume: " + AudioAmbienceVolume);
+            Debug.Log("Settings Data : AudioMusicVolume: "    + AudioMusicVolume);
+            Debug.Log("Settings Data : AudioSFXVolume: "  + AudioSFXVolume);
         }
 
     }

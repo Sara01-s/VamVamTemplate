@@ -8,13 +8,13 @@ namespace VVT.Runtime {
     [RequireComponent(typeof(Button))]
     internal sealed class VVTButtonSounds : MonoBehaviour, IPointerEnterHandler {
         
-        private IFMODAudioService _audioService;
+        private IAudioService _audioService;
         private UnityAction _onClickAction;
         private Button _thisButton;
 
         private void Awake() => _thisButton = GetComponent<Button>();
-        private void Start() => _audioService = Services.Instance.GetService<IFMODAudioService>();
-        private void PlayClickSound() => _audioService.PlaySfx(_audioService.GetSound("UI_Button_Hover_01"));
+        private void Start() => _audioService = Services.Instance.GetService<IAudioService>();
+        private void PlayClickSound() => _audioService.PlaySound("UI_Button_Hover_01");
 
         private void OnEnable() {
             _onClickAction += PlayClickSound;
@@ -27,7 +27,7 @@ namespace VVT.Runtime {
         }
 
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData) {
-            _audioService.PlaySfx(_audioService.GetSound("UI_Button_Hover_02"));
+            _audioService.PlaySound("UI_Button_Hover_02");
         }
 
     }

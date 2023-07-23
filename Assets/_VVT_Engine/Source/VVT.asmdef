@@ -2,8 +2,8 @@
     "name": "VVT",
     "rootNamespace": "",
     "references": [
-        "FMODUnity",
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.Mathematics"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
