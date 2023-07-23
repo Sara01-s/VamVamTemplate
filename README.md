@@ -10,9 +10,9 @@ Unity architecture to easily develop video games.
 - Localization with Google Sheets.
 - Utilities (Frequent Logic, Math, Custom logs, Timers, UI Sounds, etc..).
 - Organized Resources folder
+- Optional FMOD Integration
 
 # Roadmap
 - Make input system a robust service.
 - UI Navigation with visual scripting.
-- Native Unity audio service.
 - Unit and integration tests
