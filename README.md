@@ -14,5 +14,4 @@ Unity architecture to easily develop video games.
 # Roadmap
 - Make input system a robust service.
 - UI Navigation with visual scripting.
-- Native Unity audio service.
 - Unit and integration tests
