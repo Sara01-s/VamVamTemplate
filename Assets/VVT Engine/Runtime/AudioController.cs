@@ -42,8 +42,10 @@ namespace VVT.Runtime {
                 }
                 else 
                     Logs.SystemLog($"{PREFIX} {mixerData.BankName} data registered");
+            }
 
-                GenerateAudioBanks(mixerData.MixerTarget);
+            foreach (var mixerData in _mixersData) {
+                GenerateAllAudioBanksFor(mixerData.MixerTarget);
             }
 
             Logs.SystemLog(PREFIX + " Audio Banks Generated");
@@ -89,7 +91,7 @@ namespace VVT.Runtime {
 
         public void ChangeMixerVolume(Mixer mixer, float newVolume) {
             var volumeInDBs = clamp(newVolume, MIN_VOLUME_VALUE, 20 * log10(1 / newVolume));
-
+            
             // If master volume is target
             if (mixer == Mixer.Master) {
                 if (_masterMixer.SetFloat(_exposedMasterVolume, volumeInDBs))
@@ -133,26 +135,31 @@ namespace VVT.Runtime {
                 return volume;
         }
 
-        private void GenerateAudioBanks(Mixer mixer) {
+        private void GenerateAllAudioBanksFor(Mixer mixer) {
             var mixerData = _mixersDict[mixer];
-            var bankObj = Instantiate(_bankPrefab, transform);
-            var bankAudio = bankObj.GetComponent<AudioSource>();
 
-            bankAudio.outputAudioMixerGroup = mixerData.MixerGroup;
-            mixerData.AudioBanks.Add(bankAudio);
-            bankObj.name = mixerData.BankName;
+            for (int i = 0; i < mixerData.BanksAmount; i++) {
+                var bankObj = Instantiate(_bankPrefab, transform);
+                var bankAudio = bankObj.GetComponent<AudioSource>();
+
+                bankAudio.outputAudioMixerGroup = mixerData.MixerGroup;
+                bankAudio.Stop(); // For some reason, initialized audio sources have isPlaying set to true by default. :/
+                mixerData.AudioBanks.Add(bankAudio);
+                bankObj.name = mixerData.BankName;
+            }
         }
 
         private AudioSource GetAvailableSource(List<AudioSource> sources) {
-            var candidate = sources.FirstOrDefault(source => !source.isPlaying || source.clip != null);
+            var candidate = sources.FirstOrDefault(source => !source.isPlaying && source.clip == null);
 
-            if (candidate is null) {
+            if (candidate == null) {
                 candidate = sources.FirstOrDefault(source => !source.isPlaying);
-                if (candidate is not null)
+
+                if (candidate != null)
                     candidate.clip = null;
             }
 
-            if (candidate is null) {
+            if (candidate == null) {
                 Debug.LogError(PREFIX + " No banks left to play the requested sound");
                 return null;
             }

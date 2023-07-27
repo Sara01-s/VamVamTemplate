@@ -1,22 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace VVT.Runtime {
 
     public sealed partial class AudioController {
 
         [Space(20), Header("Game Sounds references")]
-        [SerializeField] private List<AudioClip> _musicClips = new List<AudioClip>();
-        [SerializeField] private List<AudioClip> _ambienceClips = new List<AudioClip>();
-        [SerializeField] private List<AudioClip> _sfxClips = new List<AudioClip>();
+        [SerializeField] private List<AudioClip> _musicClips = new();
+        [SerializeField] private List<AudioClip> _ambienceClips = new();
+        [SerializeField] private List<AudioClip> _sfxClips = new();
 
         [Tooltip("This sound will play if a play sound request fails")]
         [SerializeField] private AudioClip _errorSound;
 
-        private readonly Dictionary<string, AudioClip> _registeredSounds = new Dictionary<string, AudioClip>();
-        private readonly HashSet<string> _validPrefixes = new HashSet<string>() { 
-            "music_", "ambience_", "sfx_"
-        };
+        private readonly Dictionary<string, AudioClip> _registeredSounds = new();
+        private readonly List<string> _validPrefixes = new() { "music_", "ambience_", "sfx_" };
 
         private void Start() {
             _musicClips    .ForEach(clip => RegisterSound(clip));
@@ -25,7 +24,8 @@ namespace VVT.Runtime {
         }
 
         private void RegisterSound(AudioClip sound) {
-            if (!_validPrefixes.Contains(sound.name))
+            var validPrefix = _validPrefixes.Any(prefix => sound.name.StartsWith(prefix));
+            if (!validPrefix)
                 Debug.LogWarning($"{PREFIX} {sound.name} doesn't use any sound's prefix convention.");
 
             if (!_registeredSounds.TryAdd(sound.name, sound))
