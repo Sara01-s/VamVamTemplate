@@ -87,11 +87,6 @@ MonoBehaviour:
     m_Key: UISfxVolume
     m_Metadata:
       m_Items: []
-  - m_Id: 36956996770172928
-    m_Key: GameCore/GameCore/Main Canvas/Panel - Main Title/Button - Settings/Text
-      - Settings
-    m_Metadata:
-      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
