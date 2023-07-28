@@ -16,3 +16,4 @@ Unity architecture to easily develop video games.
 - Make input system a robust service.
 - UI Navigation with visual scripting.
 - Unit and integration tests
+- Create Game folder via script
