@@ -3436,7 +3436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f02be4563c2f2140b4c3d7ec7f12677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ListenTo>k__BackingField: {fileID: 0}
+  <ListenTo>k__BackingField: {fileID: 11400000, guid: 048623efe470be3418fc21fefe712ccd, type: 2}
   <EnableOnContext>k__BackingField: 1
   CustomEvent:
     m_PersistentCalls:
@@ -5712,7 +5712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74c45bd1e2f4537479246a0638c1a058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onSceneLoadChangeTo: {fileID: 0}
+  _onSceneLoadChangeTo: {fileID: 11400000, guid: 048623efe470be3418fc21fefe712ccd, type: 2}
 --- !u!1 &6327236821604192757
 GameObject:
   m_ObjectHideFlags: 0
