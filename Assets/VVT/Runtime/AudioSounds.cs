@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using System.Linq;
 
@@ -6,12 +7,24 @@ namespace VVT.Runtime {
 
     public sealed partial class AudioController {
 
-        [SerializeField] private bool _loadClipsFromResources = false;
+        [Space(15)]
+        [Header("Sound Settings")]
+        [Label("Pre-load Clips")]
+        [SerializeField] bool _preLoad = false;
 
-        [Space(20), Header("Game Sounds references")]
-        [SerializeField] private List<AudioClip> _musicClips = new();
-        [SerializeField] private List<AudioClip> _ambienceClips = new();
-        [SerializeField] private List<AudioClip> _sfxClips = new();
+        [SerializeField, ShowIf(nameof(_preLoad)), BoxGroup("Sounds Paths"), Label("Music : Resources/")]
+        private string _musicPath    = "Audio/Clips/Music/";
+        [SerializeField, ShowIf(nameof(_preLoad)), BoxGroup("Sounds Paths"), Label("Ambience : Resources/")] 
+        private string _ambiencePath = "Audio/Clips/Ambience/";
+        [SerializeField, ShowIf(nameof(_preLoad)), BoxGroup("Sounds Paths"), Label("SFX : Resources/")] 
+        private string _sfxPath      = "Audio/Clips/SFX/";
+
+        [SerializeField, HideIf(nameof(_preLoad)), BoxGroup("Sounds references")] 
+        private List<AudioClip> _musicClips     = new();
+        [SerializeField, HideIf(nameof(_preLoad)), BoxGroup("Sounds references")] 
+        private List<AudioClip> _ambienceClips  = new();
+        [SerializeField, HideIf(nameof(_preLoad)), BoxGroup("Sounds references")] 
+        private List<AudioClip> _sfxClips       = new();
 
         [Tooltip("This sound will play if a play sound request fails")]
         [SerializeField] private AudioClip _errorSound;
@@ -20,6 +33,12 @@ namespace VVT.Runtime {
         private readonly List<string> _validPrefixes = new() { "music_", "ambience_", "sfx_" };
 
         private void Start() {
+            if (_preLoad) {
+                _musicClips    = Resources.LoadAll<AudioClip>(_musicPath).ToList();
+                _ambienceClips = Resources.LoadAll<AudioClip>(_ambiencePath).ToList();
+                _sfxClips      = Resources.LoadAll<AudioClip>(_sfxPath).ToList();
+            }
+
             _musicClips    .ForEach(clip => RegisterSound(clip));
             _ambienceClips .ForEach(clip => RegisterSound(clip));
             _sfxClips      .ForEach(clip => RegisterSound(clip));
