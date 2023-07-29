@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using System.Linq;
+using System.Text;
 
 namespace VVT.Runtime {
 
@@ -46,9 +47,21 @@ namespace VVT.Runtime {
 
         private void RegisterSound(AudioClip sound) {
             var validPrefix = _validPrefixes.Any(prefix => sound.name.StartsWith(prefix));
-            if (!validPrefix)
-                Debug.LogWarning($"{PREFIX} {sound.name} doesn't use any sound's prefix convention.");
 
+            if (!validPrefix) {
+                var validPrefixes = new StringBuilder();
+
+                _validPrefixes.ForEach(pfx => {
+                    var connector = (pfx != _validPrefixes.Last()) ? ", " : ".";
+                    validPrefixes.Append($"{Logs.Bold(pfx)}" + connector);
+                });
+
+                Debug.LogWarning($"{PREFIX} {sound.name} doesn't use any sound's prefix convention. " +
+                                 $"valid prefixes are: {validPrefixes}");
+                return;
+            }
+
+            // Valid sound prefix
             if (!_registeredSounds.TryAdd(sound.name, sound))
                 Debug.LogError(PREFIX + " Failed to register sound: " + sound.name);
             else 

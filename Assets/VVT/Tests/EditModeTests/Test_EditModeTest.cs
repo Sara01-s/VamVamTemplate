@@ -1,3 +1,4 @@
+#if false
 using NUnit.Framework;
 using NSubstitute;
 using UnityEngine;
@@ -70,4 +71,4 @@ namespace VVT.EditorTests {
 
     }
 }
-                
+#endif

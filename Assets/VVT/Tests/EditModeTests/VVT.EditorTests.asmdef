@@ -3,7 +3,9 @@
     "rootNamespace": "VVT",
     "references": [
         "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner"
+        "UnityEditor.TestRunner",
+        "VVT.Runtime",
+        "VVT"
     ],
     "includePlatforms": [
         "Editor"

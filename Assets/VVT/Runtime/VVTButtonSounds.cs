@@ -14,7 +14,7 @@ namespace VVT.Runtime {
 
         private void Awake() => _thisButton = GetComponent<Button>();
         private void Start() => _audioService = Services.Instance.GetService<IAudioService>();
-        private void PlayClickSound() => _audioService.PlaySound("UI_Button_Hover_01");
+        private void PlayClickSound() => _audioService.PlaySound("sfx_ding");
 
         private void OnEnable() {
             _onClickAction += PlayClickSound;
