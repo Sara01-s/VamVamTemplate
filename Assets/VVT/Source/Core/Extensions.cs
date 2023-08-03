@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
-
 namespace VVT {
 
     internal static class Extensions {
@@ -41,8 +39,8 @@ namespace VVT {
             int endIndex   = value.IndexOf(end);
 
             if (startIndex >= 0 && endIndex > startIndex) {
-                int startIndexToUse = inclusive ? startIndex   : startIndex + 1;
-                int endIndexToUse   = inclusive ? endIndex + 1 : endIndex;
+                int startIndexToUse = inclusive ? startIndex + 1 : startIndex;
+                int endIndexToUse   = inclusive ? endIndex : endIndex + 1;
 
                 return value[startIndexToUse .. endIndexToUse];
             }
