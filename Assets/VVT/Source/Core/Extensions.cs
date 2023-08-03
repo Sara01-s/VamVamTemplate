@@ -1,5 +1,3 @@
-using System.Runtime.InteropServices.WindowsRuntime;
-
 namespace VVT {
 
     internal static class Extensions {
