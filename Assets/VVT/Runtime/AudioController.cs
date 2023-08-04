@@ -1,19 +1,26 @@
-using static Unity.Mathematics.math;
 using System.Collections.Generic;
-using UnityEngine.Audio;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.Audio;
 using VVT.Data;
+using static Unity.Mathematics.math;
 
 namespace VVT.Runtime {
 
     // If you're using this, make sure you have unity audio enabled in Edit -> Project Settings -> Audio
     /// <summary> Provides an Unity Audio system facade </summary>
-    public sealed partial class AudioController : MonoBehaviour, ISettingsDataPersistant, IAudioService {
+    public sealed partial class AudioController : MonoBehaviour, ISettingsDataPersistant, IAudioService
+        
+        
+        
+        
+        
+        
+        {
 
         private const float MIN_VOLUME_VALUE = 0.00001F;
         private const string PREFIX = "Audio System :";
-        
+
         [System.Serializable]
         internal class MixerData {
             [field:SerializeField] internal int BanksAmount { get; set; }
@@ -30,7 +37,7 @@ namespace VVT.Runtime {
         [SerializeField] private AudioMixer _masterMixer;
         [SerializeField] private string _exposedMasterVolume;
 
-        private Dictionary<Mixer, MixerData> _mixersDict = new Dictionary<Mixer, MixerData>();
+        private Dictionary<Mixer, MixerData> _mixersDict = new();
 
         private void Awake() {
             Services.Instance.RegisterService<IAudioService>(this);
@@ -40,7 +47,7 @@ namespace VVT.Runtime {
                     Debug.LogError($"{PREFIX} Failed to register {mixerData.BankName}");
                     continue;
                 }
-                else 
+                else
                     Logs.SystemLog($"{PREFIX} {mixerData.BankName} data registered");
             }
 
@@ -60,9 +67,9 @@ namespace VVT.Runtime {
                 Debug.LogError($"{PREFIX} Failed to load volume for {_exposedMasterVolume}");
             }
 
-            ChangeMixerVolume(Mixer.Music    , settingsData.AudioMusicVolume);
-            ChangeMixerVolume(Mixer.Ambience , settingsData.AudioAmbienceVolume);
-            ChangeMixerVolume(Mixer.SFX      , settingsData.AudioSFXVolume);
+            ChangeMixerVolume(Mixer.Music, settingsData.AudioMusicVolume);
+            ChangeMixerVolume(Mixer.Ambience, settingsData.AudioAmbienceVolume);
+            ChangeMixerVolume(Mixer.SFX, settingsData.AudioSFXVolume);
         }
 
         public void SaveData(SettingsData settingsData) {
@@ -70,7 +77,7 @@ namespace VVT.Runtime {
             // TODO : Refactor this, that means refactoring how SettingsData works.
             if (_masterMixer.GetFloat(_exposedMasterVolume, out var masterVolume))
                 settingsData.AudioMasterVolume = masterVolume;
-            else 
+            else
                 Debug.LogError($"{PREFIX} Failed to get {_exposedMasterVolume} volume");
 
             if (_masterMixer.GetFloat(_mixersDict[Mixer.Music].ExposedValue, out var musicVolume))
@@ -91,7 +98,7 @@ namespace VVT.Runtime {
 
         public void ChangeMixerVolume(Mixer mixer, float newVolume) {
             var volumeInDBs = clamp(newVolume, MIN_VOLUME_VALUE, 20 * log10(1 / newVolume));
-            
+
             // If master volume is target
             if (mixer == Mixer.Master) {
                 if (_masterMixer.SetFloat(_exposedMasterVolume, volumeInDBs))
@@ -112,7 +119,7 @@ namespace VVT.Runtime {
 
         public float GetMixerVolume(Mixer mixer) {
             // If master volume is requested
-            if (mixer == Mixer.Master) { 
+            if (mixer == Mixer.Master) {
                 if (!_masterMixer.GetFloat(_exposedMasterVolume, out var masterVolume)) {
                     Debug.LogError($"{PREFIX} Failed to get {mixer} mixer data.");
                     return 0.0f;

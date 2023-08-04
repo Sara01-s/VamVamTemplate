@@ -8,7 +8,8 @@ namespace VVT.Runtime {
     [RequireComponent(typeof(Button))]
     internal sealed class VVTButtonSounds : MonoBehaviour, IPointerEnterHandler {
         
-        private IAudioService _audioService;
+        [Service] private IAudioService _audioService;
+
         private UnityAction _onClickAction;
         private Button _thisButton;
 

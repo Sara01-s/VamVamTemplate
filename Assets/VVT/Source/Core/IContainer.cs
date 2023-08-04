@@ -1,0 +1,6 @@
+namespace VVT {
+
+    interface IContainer {
+               
+    }
+}

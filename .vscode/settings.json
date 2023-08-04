@@ -59,5 +59,6 @@
         "**/*.sln":false,
         "**/*.uxml":false,
         "**/*.uss":false,
-    }
+    },
+    "dotnet.defaultSolution": "VamVamTemplate.sln"
 }
