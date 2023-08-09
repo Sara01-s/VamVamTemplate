@@ -13,6 +13,7 @@ Unity architecture to easily develop video games.
 - Optional FMOD Integration
 
 # Roadmap
+- Use Dependecy Injection via attributes and reflection
 - Make input system a robust service.
 - UI Navigation with visual scripting.
 - Unit and integration tests

@@ -11,7 +11,6 @@ namespace VVT.Runtime {
     /// <summary> Provides an Unity Audio system facade </summary>
     public sealed partial class AudioController : MonoBehaviour, ISettingsDataPersistant, IAudioService {
 
-        private const float MIN_VOLUME_VALUE = 0.00001F;
         private const string PREFIX = "Audio System :";
         
         [System.Serializable]
@@ -20,8 +19,8 @@ namespace VVT.Runtime {
             [field:SerializeField] internal string BankName { get; set; }
             [field:SerializeField] internal string ExposedValue { get; set; }
             [field:SerializeField] internal Mixer MixerTarget { get; set; }
-            [field:SerializeField] internal List<AudioSource> AudioBanks { get; set; }
-            internal AudioMixerGroup MixerGroup { get; set; }
+            [field:SerializeField] internal AudioMixerGroup MixerGroup { get; set; }
+            internal List<AudioSource> AudioBanks { get; set; } = new();
         }
 
         [Header("Audio Controller Settings")]
@@ -30,7 +29,7 @@ namespace VVT.Runtime {
         [SerializeField] private AudioMixer _masterMixer;
         [SerializeField] private string _exposedMasterVolume;
 
-        private Dictionary<Mixer, MixerData> _mixersDict = new Dictionary<Mixer, MixerData>();
+        private Dictionary<Mixer, MixerData> _mixersDict = new();
 
         private void Awake() {
             Services.Instance.RegisterService<IAudioService>(this);
@@ -60,9 +59,9 @@ namespace VVT.Runtime {
                 Debug.LogError($"{PREFIX} Failed to load volume for {_exposedMasterVolume}");
             }
 
-            ChangeMixerVolume(Mixer.Music    , settingsData.AudioMusicVolume);
-            ChangeMixerVolume(Mixer.Ambience , settingsData.AudioAmbienceVolume);
-            ChangeMixerVolume(Mixer.SFX      , settingsData.AudioSFXVolume);
+            ChangeMixerVolume(Mixer.Music    , DecibelsToLinear(settingsData.AudioMusicVolume));
+            ChangeMixerVolume(Mixer.Ambience , DecibelsToLinear(settingsData.AudioAmbienceVolume));
+            ChangeMixerVolume(Mixer.SFX      , DecibelsToLinear(settingsData.AudioSFXVolume));
         }
 
         public void SaveData(SettingsData settingsData) {
@@ -90,7 +89,7 @@ namespace VVT.Runtime {
         }
 
         public void ChangeMixerVolume(Mixer mixer, float newVolume) {
-            var volumeInDBs = clamp(newVolume, MIN_VOLUME_VALUE, 20 * log10(1 / newVolume));
+            var volumeInDBs = log10(newVolume) * 20;
             
             // If master volume is target
             if (mixer == Mixer.Master) {
@@ -118,7 +117,7 @@ namespace VVT.Runtime {
                     return 0.0f;
                 }
                 else
-                    return masterVolume;
+                    return DecibelsToLinear(masterVolume);
             }
 
             // Everything else
@@ -132,7 +131,7 @@ namespace VVT.Runtime {
                 return 0.0f;
             }
             else
-                return volume;
+                return DecibelsToLinear(volume);
         }
 
         private void GenerateAllAudioBanksFor(Mixer mixer) {
@@ -165,6 +164,10 @@ namespace VVT.Runtime {
             }
 
             return candidate;
+        }
+
+        private float DecibelsToLinear(float volumeInDb) {
+            return pow(10.0f, volumeInDb / 20.0f);
         }
 
         // IAudioService implementation //
