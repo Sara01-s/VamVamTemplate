@@ -2,7 +2,6 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 using VVT.Input;
 using System;
-using VVT;
 
 namespace VVT.Runtime {
 

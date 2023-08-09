@@ -164,6 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412653839}
   - component: {fileID: 412653838}
+  - component: {fileID: 412653840}
   m_Layer: 0
   m_Name: Scene Context Setter
   m_TagString: Untagged
@@ -200,8 +201,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &412653840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412653837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a636a1fa9e62724280c9e3344ea85f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _note: 'What is this "VVT Scene Context Setter doing"?
+
+
+    This context setter,
+    sets the current game context to be the Scene Init Context.
+
+    Also it uses
+    an optional delay to make sure the scene is loaded.'
 --- !u!1 &1034611376
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +331,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!81 &1034611380
 AudioListener:
@@ -330,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1463084982}
   m_Layer: 0
-  m_Name: ------------------------------------------------
+  m_Name: ---------- SETUP -----------------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
