@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneTemplate;
 using UnityEngine;
@@ -15,8 +16,9 @@ namespace VVT {
         }
 
         public virtual void AfterTemplateInstantiation(SceneTemplateAsset sceneTemplateAsset, Scene scene, bool isAdditive, string sceneName) {
-            Debug.Log("hey");
+            
         }
 
     }
 }
+#endif
