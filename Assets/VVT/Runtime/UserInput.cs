@@ -11,7 +11,7 @@ namespace VVT.Runtime {
 
         private static event Action<InputActionMap> OnActionMapChanged;
         private static PlayerInputActions _playerInput;
-        private IGameContextService _gameContext;
+        private IContextService _gameContext;
 
         public static float LastInteraction { get; private set; } = 0.0f;
         public static bool ActionPressed { get; private set; } = false;
@@ -32,7 +32,7 @@ namespace VVT.Runtime {
 
             Services.Instance.RegisterService<IInputService>(this);
 
-            _gameContext = Services.Instance.GetService<IGameContextService>();
+            _gameContext = Services.Instance.GetService<IContextService>();
             _playerInput = new PlayerInputActions();
 
             ToggleActionMap(_playerInput.Gameplay);
@@ -41,11 +41,11 @@ namespace VVT.Runtime {
 
         private void Start() {
             if (_startWithInputEnabled)
-                _gameContext.Data.PlayerHasControl = true;
+                _gameContext.Info.PlayerHasControl = true;
         }
 
         private void Update() {
-            if (!_gameContext.Data.PlayerHasControl) return;
+            if (!_gameContext.Info.PlayerHasControl) return;
 
             ActionPressed = _inputInteraction.WasPerformedThisFrame();
             JumpReleased = _inputSpace.WasReleasedThisFrame();
@@ -58,7 +58,7 @@ namespace VVT.Runtime {
 
         // Event dispatch
         private void DispatchPauseInput(InputAction.CallbackContext context) {
-            if (_gameContext.Data.CanToggleGamePause)
+            if (_gameContext.Info.CanToggleGamePause)
                 EventDispatcher.OnPauseInput.Invoke();
         }
 

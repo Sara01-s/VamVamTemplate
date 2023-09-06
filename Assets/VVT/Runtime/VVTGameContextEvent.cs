@@ -14,11 +14,11 @@ namespace VVT.Runtime {
         [Header("Optional")]
         [SerializeField] private UnityEvent CustomEvent;
         
-        private IGameContextService _gameContext;
+        private IContextService _gameContext;
 
         private void Awake() {
-            _gameContext = Services.Instance.GetService<IGameContextService>();
-            gameObject.SetActive(_gameContext.Data.CurrentContext == ListenTo);
+            _gameContext = Services.Instance.GetService<IContextService>();
+            gameObject.SetActive(_gameContext.Info.CurrentContext == ListenTo);
         }
 
         private void OnEnable () => _gameContext.OnContextChanged += OnContextChange;

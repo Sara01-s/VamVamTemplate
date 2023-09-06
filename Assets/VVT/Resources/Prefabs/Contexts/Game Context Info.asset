@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 591e2e1fc23ecf04a893718bbd8da531, type: 3}
-  m_Name: Game Context Data
+  m_Script: {fileID: 11500000, guid: 7d151e90a6fcbc146a962244bd6ca888, type: 3}
+  m_Name: Game Context Info
   m_EditorClassIdentifier: 
-  <CurrentContext>k__BackingField: {fileID: 11400000, guid: 3603e463bf3698a4ca72c38add6c13c5, type: 2}
+  <CurrentContext>k__BackingField: {fileID: 11400000, guid: e2c273e85b9f29d48ac70ec0e76dcfec, type: 2}
   <PreviousContext>k__BackingField: {fileID: 11400000, guid: 3603e463bf3698a4ca72c38add6c13c5, type: 2}
   <CanToggleGamePause>k__BackingField: 0
-  <PlayerHasControl>k__BackingField: 1
+  <PlayerHasControl>k__BackingField: 0
   <GamePaused>k__BackingField: 0

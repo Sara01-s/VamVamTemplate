@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace VVT {
 
-    [CreateAssetMenu(menuName = "VVT/GameContextData")]
-    public sealed class GameContextData : ScriptableObject {
+    [CreateAssetMenu(menuName = "VVT/Game Context Info")]
+    public sealed class GameContextInfo : ScriptableObject {
 
         [Tooltip("Current game context handled by Vam Vam Template")]
         [field:SerializeField] public GameContext CurrentContext { get; set; }

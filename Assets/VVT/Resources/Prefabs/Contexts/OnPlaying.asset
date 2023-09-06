@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: OnPlaying
   m_EditorClassIdentifier: 
   <Name>k__BackingField: OnPlaying
+  <AllowPause>k__BackingField: 1
+  <AllowControl>k__BackingField: 1
   _description: Player is playing the game!

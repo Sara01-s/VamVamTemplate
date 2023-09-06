@@ -7,10 +7,10 @@ namespace VVT.Runtime {
         [SerializeField] private GameContext _sceneInitContext;
         [SerializeField] private Optional<float> _delay;
 
-        private IGameContextService _gameContext;
+        private IContextService _gameContext;
 
         private void Awake() {
-            _gameContext = Services.Instance.GetService<IGameContextService>();
+            _gameContext = Services.Instance.GetService<IContextService>();
         }
 
         private void Start() {
@@ -23,7 +23,7 @@ namespace VVT.Runtime {
         }
 
         private void UpdateContext() {
-            _gameContext.UpdateGameContext(_gameContext.Data.PreviousContext, _sceneInitContext);
+            _gameContext.UpdateGameContext(_gameContext.Info.PreviousContext, _sceneInitContext);
         }
 
 

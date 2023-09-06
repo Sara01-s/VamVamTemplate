@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: OnPauseToggle
   m_EditorClassIdentifier: 
   <Name>k__BackingField: OnPauseToggle
+  <AllowPause>k__BackingField: 1
+  <AllowControl>k__BackingField: 1
   _description: Player toggled game pause.

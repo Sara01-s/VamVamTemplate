@@ -13,7 +13,7 @@ namespace VVT {
     /// <summary> Unity's Debug class facade with extra utilities </summary>
     public static class Logs {
 
-        private static Dictionary<LogColor, string> ColorsMap = new Dictionary<LogColor, string> {
+        private static Dictionary<LogColor, string> ColorsMap = new() {
             { LogColor.Aqua,      "aqua"      },
             { LogColor.Black,     "black"     },
             { LogColor.Blue,      "blue"      },
@@ -55,7 +55,7 @@ namespace VVT {
 
             result = bold ? Bold(msg) : msg;
             result = italic ? Italic(result) : result;
-            result = size == 1 ? Size(result, size) : result; 
+            result = size != 1 ? Size(result, size) : result; 
 
             UnityEngine.Debug.Log(Colorize(result.ToString(), textColor));
         }

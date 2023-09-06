@@ -7,17 +7,17 @@ namespace VVT.Runtime {
     
     internal sealed class SceneLoader : MonoBehaviour, ISceneService {
 
-        [SerializeField] private GameContext _onSceneLoadChangeTo;
+        [SerializeField] private GameContext _loadingContext;
 
         private GameContext _previousContext;
         private ISettingsDataService _settingsDataService;
         private IGameDataService _gameDataService;
-        private IGameContextService _gameContext;
+        private IContextService _gameContext;
         
         private void Awake() {
             Services.Instance.RegisterService<ISceneService>(this);
             
-            _gameContext = Services.Instance.GetService<IGameContextService>();
+            _gameContext = Services.Instance.GetService<IContextService>();
             _gameDataService = Services.Instance.GetService<IGameDataService>();
             _settingsDataService = Services.Instance.GetService<ISettingsDataService>();
         }
@@ -26,19 +26,23 @@ namespace VVT.Runtime {
             Services.Instance.UnRegisterService<ISceneService>();
         }
 
-        public void LoadSceneInstantWithSave(int index) {
-            _gameDataService.SaveData();
-            _settingsDataService.SaveData();
-
+        public void LoadSceneImmediate(int index) {
             SceneManager.LoadScene(index);
         }
 
-        public void LoadNewScene(int index) {
+        public void LoadScene(int index) {
+            
+            if (index < SceneManager.sceneCount || index > SceneManager.sceneCount) {
+                var sceneName = SceneManager.GetSceneByBuildIndex(index).name;
+                Logs.LogError($"Can't load scene {sceneName} (with build index {index}), There are {SceneManager.sceneCount} scenes in Build Settings");
+                return;
+            }
+
             StopAllCoroutines();
             StartCoroutine(CO_LoadScene(index));
         }
 
-        public IEnumerator CO_LoadScene(int index) {
+        private IEnumerator CO_LoadScene(int index) {
 
             Time.timeScale = 1;
 
@@ -48,8 +52,8 @@ namespace VVT.Runtime {
             var scene = SceneManager.LoadSceneAsync(index);
 
             scene.allowSceneActivation = false;
-            _previousContext = _gameContext.Data.CurrentContext;
-            _gameContext.UpdateGameContext(_previousContext, _onSceneLoadChangeTo);
+            _previousContext = _gameContext.Info.CurrentContext;
+            _gameContext.UpdateGameContext(_previousContext, _loadingContext);
 
             yield return new WaitForSeconds(1f);                // ! FIXME - Delete this in an actual game
 
@@ -57,7 +61,6 @@ namespace VVT.Runtime {
                 yield return null;                              // Add delay to the scene load while is not ready
                 
             scene.allowSceneActivation = true;
-            _gameContext.Data.PlayerHasControl = true;
 
             Logs.SystemLog($"Level Loader : Scene \"{SceneManager.GetSceneByBuildIndex(index).name}\" loaded, make sure the scene has a SceneContextSetter");
         }
