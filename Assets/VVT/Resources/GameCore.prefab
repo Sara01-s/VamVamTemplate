@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 7064044861200514369}
   - component: {fileID: 1327374925656932645}
   m_Layer: 0
-  m_Name: Game Context
+  m_Name: Context Controller
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5f1caf3418b434a8942d4fa5f6968a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Info>k__BackingField: {fileID: 0}
+  <Info>k__BackingField: {fileID: 11400000, guid: 1e2beecf00ed245499a777f5f1217151, type: 2}
 --- !u!1 &1270440866340678412
 GameObject:
   m_ObjectHideFlags: 0
@@ -5022,7 +5022,7 @@ GameObject:
   - component: {fileID: 125699177170708749}
   - component: {fileID: 3672193864692975592}
   m_Layer: 5
-  m_Name: UI Controller
+  m_Name: UI Mediator
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

@@ -9,6 +9,7 @@ namespace VVT.Runtime {
 
     // If you're using this, make sure you have unity audio enabled in Edit -> Project Settings -> Audio
     /// <summary> Provides an Unity Audio system facade </summary>
+    [DefaultExecutionOrder(-50)]
     public sealed partial class AudioController : MonoBehaviour, ISettingsDataPersistant, IAudioService {
 
         private const string PREFIX = "Audio System :";

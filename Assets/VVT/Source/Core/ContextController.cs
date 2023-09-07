@@ -3,6 +3,7 @@ using System;
 
 namespace VVT {
 
+    [DefaultExecutionOrder(-50)]
     public sealed class ContextController : MonoBehaviour, IContextService {
 
         [field:SerializeField] public GameContextInfo Info { get; private set; }

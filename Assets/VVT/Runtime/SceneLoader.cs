@@ -5,6 +5,7 @@ using VVT.Data;
 
 namespace VVT.Runtime {
     
+    [DefaultExecutionOrder(-50)]
     internal sealed class SceneLoader : MonoBehaviour, ISceneService {
 
         [SerializeField] private GameContext _loadingContext;
