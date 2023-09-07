@@ -17,7 +17,15 @@ MonoBehaviour:
   description: Example of a scene using VamVamTemplate
   preview: {fileID: 4580503474245907703}
   dependencies:
+  - dependency: {fileID: 7433441132597879392, guid: 9b6445e196270594781218641b569da9, type: 3}
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: e2c273e85b9f29d48ac70ec0e76dcfec, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: -4733365628477956816, guid: 5cbfa92352ffaf44dab877e6f241ad76, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 0bfd1f5b2c3a7034a9a835eb5cb58499, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 9197481963319205126, guid: fe61da1f4d10ea043a0c7af23e28b2d8, type: 3}
     instantiationMode: 1
   templatePipeline: {fileID: 11500000, guid: db836ef4852adb441a446fd096832924, type: 3}
   addToDefaults: 1

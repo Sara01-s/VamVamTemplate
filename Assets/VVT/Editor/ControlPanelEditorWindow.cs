@@ -6,8 +6,9 @@ using System;
 
 namespace VVT.Editor {
 
+    // ! WIP
     public class ControlPanelEditorWindow : EditorWindow {
-        [MenuItem("VamVam/Control Panel")]
+        //[MenuItem("VamVam/Control Panel")]
         public static void Open() {
             var window = CreateWindow<ControlPanelEditorWindow>("Control panel");
         }

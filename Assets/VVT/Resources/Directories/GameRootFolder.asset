@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea892b54eeef74b6989e615f1df83be8, type: 3}
+  m_Name: GameRootFolder
+  m_EditorClassIdentifier: 
+  editorNotes: Game root folder DO NOT change the name of this Scriptable
+  Folders:
+    m_keys:
+    - Game
+    m_values:
+    - IsEnabled: 0
+      ChildDirectoryData: {fileID: 11400000, guid: b0c074b9dab9c4f458c6c3e6aa9f8060, type: 2}

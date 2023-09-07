@@ -3,7 +3,7 @@ using UnityEngine;
 namespace VVT {
     
     [CreateAssetMenu(menuName = "VVT/Settings")]
-    /// <summary> All possible contexts where the player could be while playing the game </summary>
+    /// <summary> VamVamTemplate main control </summary>
     public sealed class VVTSettings : ScriptableObject {
         
         

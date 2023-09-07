@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea892b54eeef74b6989e615f1df83be8, type: 3}
+  m_Name: Game Folder
+  m_EditorClassIdentifier: 
+  editorNotes: Game folder
+  Folders:
+    m_keys:
+    - Resources
+    - External
+    - Scenes
+    - Scripts
+    - Editor
+    m_values:
+    - IsEnabled: 0
+      ChildDirectoryData: {fileID: 11400000, guid: 7d00bba6104ad5f4fb93b5bd050d8b21, type: 2}
+    - IsEnabled: 0
+      ChildDirectoryData: {fileID: 0}
+    - IsEnabled: 0
+      ChildDirectoryData: {fileID: 0}
+    - IsEnabled: 0
+      ChildDirectoryData: {fileID: 11400000, guid: 8fb0be429bd0b794a80c9dd37a475f59, type: 2}
+    - IsEnabled: 0
+      ChildDirectoryData: {fileID: 0}

@@ -1,5 +1,10 @@
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+using UnityEditor.SceneManagement;
+#endif
+
 namespace VVT {
     /// <summary>
     /// This class will instantiate the "Game Core",
@@ -14,6 +19,12 @@ namespace VVT {
             UnityEngine.Object.DontDestroyOnLoad(
                 UnityEngine.Object.Instantiate(Resources.Load("GameCore")) as GameObject);
         }
-
+        
+#if UNITY_EDITOR
+        [MenuItem("VamVam/Open GameCore")]
+        public static void OpenGameCorePrefab() {
+            PrefabStageUtility.OpenPrefab("Assets/VVT/Resources/GameCore.prefab");
+        }
+#endif
     }
 }

@@ -1,0 +1,35 @@
+.button-menu {
+    width: 90%;
+    height: 25%;
+    transition-duration: 0.8s;
+    transition-timing-function: ease-out-back;
+    font-size: 60px;
+    -unity-font-definition: none;
+    -unity-font: url('project://database/Assets/VVT/Resources/UI/Fonts/Latin/NotoSans-Regular.ttf?fileID=12800000&guid=542da467b235fcb4092b95258aa067b0&type=3#NotoSans-Regular');
+}
+
+.button-menu:hover {
+    background-color: rgb(153, 153, 153);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-back;
+    transition-property: all;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    -unity-font-definition: none;
+    -unity-font: resource('UI/Fonts/Latin/NotoSans-Regular');
+}
+
+.button-menu:active {
+    background-color: rgb(0, 0, 0);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out-bounce;
+    transition-property: all;
+    padding-left: -5%;
+    padding-right: -5%;
+    padding-top: -5%;
+    padding-bottom: -5%;
+    -unity-font-definition: none;
+    -unity-font: resource('UI/Fonts/Latin/NotoSans-Regular');
+}

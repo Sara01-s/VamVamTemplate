@@ -8242,6 +8242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823152003124893913}
   - component: {fileID: 5580193291099918130}
+  - component: {fileID: 1862829675205555268}
   m_Layer: 0
   m_Name: GameCore
   m_TagString: Untagged
@@ -8282,6 +8283,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd6bd8d0434ddb41b003d7320646b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1862829675205555268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628019690173697697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a636a1fa9e62724280c9e3344ea85f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _note: DO NOT change the name of the prefab, name must be "GameCore".
 --- !u!1 &8656364034364978294
 GameObject:
   m_ObjectHideFlags: 0

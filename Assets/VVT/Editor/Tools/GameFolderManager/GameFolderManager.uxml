@@ -1,5 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" AddressablesGUI="UnityEditor.AddressableAssets.GUIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="root">
-        <ui:Label text="VVT Folder Creator" display-tooltip-when-elided="true" name="Welcome" style="font-size: 24px; color: rgb(142, 180, 142); -unity-text-align: middle-center; -unity-font-style: bold; margin-top: 10%;" />
-    </ui:VisualElement>
-</ui:UXML>
