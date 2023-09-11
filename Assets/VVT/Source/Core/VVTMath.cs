@@ -2,13 +2,21 @@ using static Unity.Mathematics.math;
 using UnityEngine;
 
 namespace VVT {
-
+    // TODO - Documentation
     public static class VVTMath {
 
         public const float PHI = 1.618033988749F;
 
         public static float GetPHI() {
             return 1.0f + sqrt(5) / 2.0f;
+        }
+
+        public static float DbToLinear(float volumeInDb) {
+            return pow(10.0f, volumeInDb / 20.0f);
+        }
+
+        public static float LinearToDb(float volumeLinear) {
+            return 20.0f * log10(volumeLinear);
         }
 
         /// <summary> Returns a remaped version of the given range. </summary>
