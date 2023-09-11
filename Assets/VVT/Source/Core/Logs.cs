@@ -115,7 +115,7 @@ namespace VVT {
 
             result = bold ? Bold(msg) : msg;
             result = italic ? Italic(result) : result;
-            result = size == 1 ? Size(result, size) : result; 
+            result = size != 1 ? Size(result, size) : result;
 
             Log(Colorize(result, textColor));
         }
@@ -132,27 +132,27 @@ namespace VVT {
         }
 
         public static string ErrorMessage(object message, Exception e) {
-            return $"{message.ToString()} \n {e.Message} \n {e.StackTrace} \n {e}";
+            return $"{message} \n {e.Message} \n {e.StackTrace} \n {e}";
         }
 
         public static string Colorize(object message, LogColor logColor) {
-            return $"<color={logColor}>{message.ToString()}</color>";
+            return $"<color={logColor}>{message}</color>";
         }
 
         public static string Colorize(object message, string hexColor) {
-            return $"<color={hexColor}>{message.ToString()}</color>";
+            return $"<color={hexColor}>{message}</color>";
         }
 
         public static string Bold(object message) {
-            return $"<b>{message.ToString()}</b>";
+            return $"<b>{message}</b>";
         }
 
         public static string Italic(string message) {
-            return $"<i>{message.ToString()}</i>";
+            return $"<i>{message}</i>";
         }
 
         public static string Size(string message, int size) {
-            return $"<size={size}>{message.ToString()}</size>";
+            return $"<size={size}>{message}</size>";
         }
     }
 }
