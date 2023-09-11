@@ -75,7 +75,7 @@ namespace VVT {
 
             result = bold ? Bold(msg) : msg;
             result = italic ? Italic(result) : result;
-            result = size == 1 ? Size(result, size) : result; 
+            result = size != 1 ? Size(result, size) : result; 
 
             UnityEngine.Debug.Log(Colorize(result, textColor));
         }

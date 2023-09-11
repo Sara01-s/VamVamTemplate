@@ -16,10 +16,10 @@ namespace VVT.Runtime {
         
         [System.Serializable]
         internal class MixerData {
-            [field:SerializeField] internal int BanksAmount { get; set; }
-            [field:SerializeField] internal string BankName { get; set; }
+            [field:SerializeField] internal int BanksAmount     { get; set; }
+            [field:SerializeField] internal string BankName     { get; set; }
             [field:SerializeField] internal string ExposedValue { get; set; }
-            [field:SerializeField] internal Mixer MixerTarget { get; set; }
+            [field:SerializeField] internal Mixer MixerTarget   { get; set; }
             [field:SerializeField] internal AudioMixerGroup MixerGroup { get; set; }
             internal List<AudioSource> AudioBanks { get; set; } = new();
         }
@@ -30,7 +30,7 @@ namespace VVT.Runtime {
         [SerializeField] private AudioMixer _masterMixer;
         [SerializeField] private string _exposedMasterVolume;
 
-        private Dictionary<Mixer, MixerData> _mixersDict = new();
+        private readonly Dictionary<Mixer, MixerData> _mixersDict = new();
 
         private void Awake() {
             Services.Instance.RegisterService<IAudioService>(this);
@@ -60,9 +60,9 @@ namespace VVT.Runtime {
                 Debug.LogError($"{PREFIX} Failed to load volume for {_exposedMasterVolume}");
             }
 
-            ChangeMixerVolume(Mixer.Music    , DecibelsToLinear(settingsData.AudioMusicVolume));
-            ChangeMixerVolume(Mixer.Ambience , DecibelsToLinear(settingsData.AudioAmbienceVolume));
-            ChangeMixerVolume(Mixer.SFX      , DecibelsToLinear(settingsData.AudioSFXVolume));
+            ChangeMixerVolume(Mixer.Music    , VVTMath.DbToLinear(settingsData.AudioMusicVolume));
+            ChangeMixerVolume(Mixer.Ambience , VVTMath.DbToLinear(settingsData.AudioAmbienceVolume));
+            ChangeMixerVolume(Mixer.SFX      , VVTMath.DbToLinear(settingsData.AudioSFXVolume));
         }
 
         public void SaveData(SettingsData settingsData) {
@@ -90,7 +90,7 @@ namespace VVT.Runtime {
         }
 
         public void ChangeMixerVolume(Mixer mixer, float newVolume) {
-            var volumeInDBs = log10(newVolume) * 20;
+            var volumeInDBs = VVTMath.LinearToDb(newVolume);
             
             // If master volume is target
             if (mixer == Mixer.Master) {
@@ -107,6 +107,7 @@ namespace VVT.Runtime {
 
             if (!_masterMixer.SetFloat(mixerData.ExposedValue, volumeInDBs)) {
                 Debug.LogError($"{PREFIX} Failed to set volume for {mixerData.ExposedValue}");
+                return;
             }
         }
 
@@ -117,8 +118,7 @@ namespace VVT.Runtime {
                     Debug.LogError($"{PREFIX} Failed to get {mixer} mixer data.");
                     return 0.0f;
                 }
-                else
-                    return DecibelsToLinear(masterVolume);
+                else return VVTMath.DbToLinear(masterVolume);
             }
 
             // Everything else
@@ -131,15 +131,14 @@ namespace VVT.Runtime {
                 Debug.LogError($"{PREFIX} Failed to get from {mixerData.ExposedValue}");
                 return 0.0f;
             }
-            else
-                return DecibelsToLinear(volume);
+            else return VVTMath.DbToLinear(volume);
         }
 
         private void GenerateAllAudioBanksFor(Mixer mixer) {
             var mixerData = _mixersDict[mixer];
 
             for (int i = 0; i < mixerData.BanksAmount; i++) {
-                var bankObj = Instantiate(_bankPrefab, transform);
+                var bankObj   = Instantiate(_bankPrefab, transform);
                 var bankAudio = bankObj.GetComponent<AudioSource>();
 
                 bankAudio.outputAudioMixerGroup = mixerData.MixerGroup;
@@ -167,19 +166,26 @@ namespace VVT.Runtime {
             return candidate;
         }
 
-        private float DecibelsToLinear(float volumeInDb) {
-            return pow(10.0f, volumeInDb / 20.0f);
+        // IAudioService implementation //
+        public void PlaySound(string soundExactName, Mixer mixer = Mixer.SFX, float volume = 1, float pitch = 1, bool is3D = false, float spatialBlend = 1) {
+            PlaySound(ParseSound(soundExactName), mixer, volume, pitch, is3D, spatialBlend);
         }
 
-        // IAudioService implementation //
-        public void PlaySound(string sound, Mixer mixer = Mixer.SFX, bool is3D = false) {
+        public void PlaySound(AudioClip clip, Mixer mixer = Mixer.SFX, float volume = 1, float pitch = 1, bool is3D = false, float spatialBlend = 1) {
+            if (clip == null) {
+                Logs.LogError(PREFIX + "Failed to play sound, audio clip is null");
+                return;
+            }
+
             var sources = _mixersDict[mixer].AudioBanks;
             var source = GetAvailableSource(sources);
 
-            source.clip = ParseSound(sound);
             source.spatialize = is3D;
+            source.spatialBlend = spatialBlend;
+            source.pitch = pitch;
+            source.volume = volume;
+            source.clip = clip;
             source.Play();
         }
-
     }
 }
