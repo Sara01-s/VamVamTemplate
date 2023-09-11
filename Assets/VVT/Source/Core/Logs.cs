@@ -95,9 +95,9 @@ namespace VVT {
             UnityEngine.Debug.LogWarning(message);
         }
         
-        public static void LogError(object message) {
+        public static void LogError(object message, ErrorCode errorCode = ErrorCode.GenericError) {
             if (!GameLogs) return;
-            UnityEngine.Debug.LogError(message);
+            UnityEngine.Debug.LogError($"{message}, Error code: [{(int) errorCode}: {errorCode}]");
         }
 
 
@@ -126,9 +126,9 @@ namespace VVT {
             UnityEngine.Debug.LogWarning(message);
         }
         
-        public static void SystemLogError(object message) {
+        public static void SystemLogError(object message, ErrorCode errorCode = ErrorCode.GenericError) {
             if (!SystemLogs) return;
-            UnityEngine.Debug.LogError(message);
+            UnityEngine.Debug.LogError($"{message}, Error code: [{(int)errorCode}: {errorCode}]");
         }
 
         public static string ErrorMessage(object message, Exception e) {
