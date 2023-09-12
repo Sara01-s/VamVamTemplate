@@ -102,9 +102,9 @@ namespace VVT {
 
 
         // System Logs
-        public static void SystemLog(object message) {
+        public static void SystemLog(string systemPrefix, object message) {
             if (!SystemLogs) return;
-            Log(message);
+            Log(systemPrefix + message);
         }
 
         public static void SystemLog(object message, LogColor textColor = LogColor.Grey, bool bold = false, bool italic = false, int size = 1) {
@@ -121,14 +121,14 @@ namespace VVT {
         }
 
 
-        public static void SystemLogWarning(object message) {
+        public static void SystemLogWarning(string systemPrefix, object message) {
             if (!SystemLogs) return;
-            UnityEngine.Debug.LogWarning(message);
+            UnityEngine.Debug.LogWarning(systemPrefix + message);
         }
         
-        public static void SystemLogError(object message, ErrorCode errorCode = ErrorCode.GenericError) {
+        public static void SystemLogError(string systemPrefix, object message, ErrorCode errorCode = ErrorCode.GenericError) {
             if (!SystemLogs) return;
-            UnityEngine.Debug.LogError($"{message}, Error code: [{(int)errorCode}: {errorCode}]");
+            UnityEngine.Debug.LogError($"{systemPrefix + message}, Error code: [{(int)errorCode}: {errorCode}]");
         }
 
         public static string ErrorMessage(object message, Exception e) {

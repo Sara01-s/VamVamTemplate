@@ -56,21 +56,21 @@ namespace VVT.Runtime {
                     validPrefixes.Append($"{Logs.Bold(pfx)}" + connector);
                 });
 
-                Debug.LogWarning($"{PREFIX} {sound.name} doesn't use any sound's prefix convention. " +
+                Debug.LogWarning($"{Prefix} {sound.name} doesn't use any sound's prefix convention. " +
                                  $"valid prefixes are: {validPrefixes}");
                 return;
             }
 
             // Valid sound prefix
             if (!_registeredSounds.TryAdd(sound.name, sound))
-                Debug.LogError(PREFIX + " Failed to register sound: " + sound.name);
+                Debug.LogError(Prefix + " Failed to register sound: " + sound.name);
             else 
-                Logs.SystemLog(PREFIX + " Sound " + sound.name + " registered");
+                Logs.SystemLog(Prefix + " Sound " + sound.name + " registered");
         }
 
         private AudioClip ParseSound(string soundName) {
             if (!_registeredSounds.TryGetValue(soundName, out var sound)) {
-                Debug.LogWarning($"{PREFIX} Failed to get sound: \"{soundName}\", default error sound played instead");
+                Debug.LogWarning($"{Prefix} Failed to get sound: \"{soundName}\", default error sound played instead");
                 return _errorSound == null ? null : _errorSound;
             }
             else return sound;

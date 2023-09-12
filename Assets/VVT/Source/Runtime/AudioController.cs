@@ -1,4 +1,3 @@
-using static Unity.Mathematics.math;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
@@ -9,10 +8,9 @@ namespace VVT.Runtime {
 
     // If you're using this, make sure you have unity audio enabled in Edit -> Project Settings -> Audio
     /// <summary> Provides an Unity Audio system facade </summary>
-    [DefaultExecutionOrder(-50)]
-    public sealed partial class AudioController : MonoBehaviour, ISettingsDataPersistant, IAudioService {
+    public sealed partial class AudioController : VVTMonoSystem, ISettingsDataPersistant, IAudioService {
 
-        private const string PREFIX = "Audio System :";
+        protected override string Prefix { get; set; } = "Audio Service : ";
         
         [System.Serializable]
         internal class MixerData {
@@ -37,18 +35,18 @@ namespace VVT.Runtime {
 
             foreach (var mixerData in _mixersData) {
                 if (!_mixersDict.TryAdd(mixerData.MixerTarget, mixerData)) {
-                    Debug.LogError($"{PREFIX} Failed to register {mixerData.BankName}");
+                    Debug.LogError($"{Prefix} Failed to register {mixerData.BankName}");
                     continue;
                 }
                 else 
-                    Logs.SystemLog($"{PREFIX} {mixerData.BankName} data registered");
+                    Logs.SystemLog($"{Prefix} {mixerData.BankName} data registered");
             }
 
             foreach (var mixerData in _mixersData) {
                 GenerateAllAudioBanksFor(mixerData.MixerTarget);
             }
 
-            Logs.SystemLog(PREFIX + " Audio Banks Generated");
+            Logs.SystemLog(Prefix + " Audio Banks Generated");
         }
 
         private void OnDisable() {
@@ -57,7 +55,7 @@ namespace VVT.Runtime {
 
         public void LoadData(SettingsData settingsData) {
             if (!_masterMixer.SetFloat(_exposedMasterVolume, settingsData.AudioMasterVolume)) {
-                Debug.LogError($"{PREFIX} Failed to load volume for {_exposedMasterVolume}");
+                Debug.LogError($"{Prefix} Failed to load volume for {_exposedMasterVolume}");
             }
 
             ChangeMixerVolume(Mixer.Music    , VVTMath.DbToLinear(settingsData.AudioMusicVolume));
@@ -71,22 +69,22 @@ namespace VVT.Runtime {
             if (_masterMixer.GetFloat(_exposedMasterVolume, out var masterVolume))
                 settingsData.AudioMasterVolume = masterVolume;
             else 
-                Debug.LogError($"{PREFIX} Failed to get {_exposedMasterVolume} volume");
+                Debug.LogError($"{Prefix} Failed to get {_exposedMasterVolume} volume");
 
             if (_masterMixer.GetFloat(_mixersDict[Mixer.Music].ExposedValue, out var musicVolume))
                 settingsData.AudioMusicVolume = musicVolume;
             else
-                Debug.LogError($"{PREFIX} Failed to get {_mixersDict[Mixer.Music].ExposedValue} volume");
+                Debug.LogError($"{Prefix} Failed to get {_mixersDict[Mixer.Music].ExposedValue} volume");
 
             if (_masterMixer.GetFloat(_mixersDict[Mixer.Ambience].ExposedValue, out var ambienceVolume))
                 settingsData.AudioAmbienceVolume = ambienceVolume;
             else
-                Debug.LogError($"{PREFIX} Failed to get {_mixersDict[Mixer.Ambience].ExposedValue} volume");
+                Debug.LogError($"{Prefix} Failed to get {_mixersDict[Mixer.Ambience].ExposedValue} volume");
 
             if (_masterMixer.GetFloat(_mixersDict[Mixer.SFX].ExposedValue, out var sfxVolume))
                 settingsData.AudioSFXVolume = sfxVolume;
             else
-                Debug.LogError($"{PREFIX} Failed to get {_mixersDict[Mixer.SFX].ExposedValue} volume");
+                Debug.LogError($"{Prefix} Failed to get {_mixersDict[Mixer.SFX].ExposedValue} volume");
         }
 
         public void ChangeMixerVolume(Mixer mixer, float newVolume) {
@@ -97,16 +95,16 @@ namespace VVT.Runtime {
                 if (_masterMixer.SetFloat(_exposedMasterVolume, volumeInDBs))
                     return;
                 else
-                    Debug.LogError($"{PREFIX} Failed to get {mixer} mixer data.");
+                    Debug.LogError($"{Prefix} Failed to get {mixer} mixer data.");
             }
 
             if (!_mixersDict.TryGetValue(mixer, out var mixerData)) {
-                Debug.LogError($"{PREFIX} Failed to get {mixer} mixer data.");
+                Debug.LogError($"{Prefix} Failed to get {mixer} mixer data.");
                 return;
             }
 
             if (!_masterMixer.SetFloat(mixerData.ExposedValue, volumeInDBs)) {
-                Debug.LogError($"{PREFIX} Failed to set volume for {mixerData.ExposedValue}");
+                Debug.LogError($"{Prefix} Failed to set volume for {mixerData.ExposedValue}");
                 return;
             }
         }
@@ -115,7 +113,7 @@ namespace VVT.Runtime {
             // If master volume is requested
             if (mixer == Mixer.Master) { 
                 if (!_masterMixer.GetFloat(_exposedMasterVolume, out var masterVolume)) {
-                    Debug.LogError($"{PREFIX} Failed to get {mixer} mixer data.");
+                    Debug.LogError($"{Prefix} Failed to get {mixer} mixer data.");
                     return 0.0f;
                 }
                 else return VVTMath.DbToLinear(masterVolume);
@@ -123,12 +121,12 @@ namespace VVT.Runtime {
 
             // Everything else
             if (!_mixersDict.TryGetValue(mixer, out var mixerData)) {
-                Debug.LogError($"{PREFIX} Failed to get {mixer} mixer data.");
+                Debug.LogError($"{Prefix} Failed to get {mixer} mixer data.");
                 return 0.0f;
             }
 
             if (!_masterMixer.GetFloat(mixerData.ExposedValue, out var volume)) {
-                Debug.LogError($"{PREFIX} Failed to get from {mixerData.ExposedValue}");
+                Debug.LogError($"{Prefix} Failed to get from {mixerData.ExposedValue}");
                 return 0.0f;
             }
             else return VVTMath.DbToLinear(volume);
@@ -159,7 +157,7 @@ namespace VVT.Runtime {
             }
 
             if (candidate == null) {
-                Debug.LogError(PREFIX + " No banks left to play the requested sound");
+                Debug.LogError(Prefix + " No banks left to play the requested sound");
                 return null;
             }
 
@@ -173,7 +171,7 @@ namespace VVT.Runtime {
 
         public void PlaySound(AudioClip clip, Mixer mixer = Mixer.SFX, float volume = 1, float pitch = 1, bool is3D = false, float spatialBlend = 1) {
             if (clip == null) {
-                Logs.LogError(PREFIX + "Failed to play sound, audio clip is null");
+                Logs.LogError(Prefix + "Failed to play sound, audio clip is null");
                 return;
             }
 

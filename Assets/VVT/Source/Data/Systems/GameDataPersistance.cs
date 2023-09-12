@@ -57,7 +57,7 @@ namespace VVT.Data {
 
             // Debugging purposes only
             if (_gameData == null && _initializeDataIfNull) {
-                Logs.SystemLogWarning(PREFIX + "Data created for development/debug");
+                Logs.SystemLogWarning(PREFIX, "Data created for development/debug");
                 CreateNewData();
             }
 
@@ -82,7 +82,7 @@ namespace VVT.Data {
         private void OnApplicationQuit() => SaveData();
         public void SaveData() {
             if (_gameData is null) {
-                Logs.SystemLogWarning(PREFIX + "No data was found, a New Game needs to be started before data can be saved.");
+                Logs.SystemLogWarning(PREFIX, "No data was found, a New Game needs to be started before data can be saved.");
                 return;
             }
         
@@ -91,7 +91,7 @@ namespace VVT.Data {
                 if (!dataObj.Equals(null)) {                // Using Object.Equals because null check for destroyed objects doesn't work :/
                     dataObj.SaveData(_gameData);
                 }
-                else Logs.SystemLogWarning(PREFIX + "One or more data objects are null");
+                else Logs.SystemLogWarning(PREFIX, "One or more data objects are null");
             }
 
             _fileDataHandler.SaveToFile(_gameData, _selectedProfileID);
