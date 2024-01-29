@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2bf003958445ff4c97d8662175fab8e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6840f2a32e88a5f4cad57c850b9586fd, type: 3}
   m_Name: OnSettings
   m_EditorClassIdentifier: 
   <Name>k__BackingField: OnSettings
-  <AllowPause>k__BackingField: 1
-  <AllowControl>k__BackingField: 1
-  _description: Player is configuring the game.
+  <AllowPause>k__BackingField: 0
+  <AllowControl>k__BackingField: 0
+  <CursorLockState>k__BackingField: 0
+  <CursorVisibleState>k__BackingField: 1
+  _description: Player is setting up game's parameters

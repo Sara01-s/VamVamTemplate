@@ -97,7 +97,7 @@ namespace VVT {
         
         public static void LogError(object message, ErrorCode errorCode = ErrorCode.GenericError) {
             if (!GameLogs) return;
-            UnityEngine.Debug.LogError($"{message}, Error code: [{(int) errorCode}: {errorCode}]");
+            UnityEngine.Debug.LogError($"{message} Error code: [{(int) errorCode}: {errorCode}]");
         }
 
 

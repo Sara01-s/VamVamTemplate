@@ -6,20 +6,20 @@ namespace VVT.Runtime {
     /// <summary> Main UI using Mediator Pattern </summary>
     internal sealed class UIMediator : MonoBehaviour {
 
-        [SerializeField] private GameContext _pauseContext;
-        [SerializeField] private GameContext _settingsContext;
-        [SerializeField] private GameContext _mainTitleContext;
-        [SerializeField] private GameContext _saveSlotsContext;
+        [SerializeField] private Context _pauseContext;
+        [SerializeField] private Context _settingsContext;
+        [SerializeField] private Context _mainTitleContext;
+        [SerializeField] private Context _saveSlotsContext;
 
         private ISceneService _sceneService;
-        private IContextService _gameContext;
+        private IContextService _contextService;
 
         private void Awake() {
             _sceneService = Services.Instance.GetService<ISceneService>();
-            _gameContext  = Services.Instance.GetService<IContextService>();
+            _contextService  = Services.Instance.GetService<IContextService>();
         }
 
-                                // Button functions //
+        // Button functions //
         public void GoToPreviousScene() {
             int previousSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
             _sceneService.LoadScene(previousSceneIndex);
@@ -31,17 +31,20 @@ namespace VVT.Runtime {
         }
 
         public void RestartScene() {
-            if (_gameContext.Info.GamePaused) EventDispatcher.OnPauseInput?.Invoke();
-            _sceneService.ReloadLevel();
+            _sceneService.ReloadScene();
         }
 
-        public void UpdateContextTo(GameContext newContext) {
-            _gameContext.UpdateGameContext(newContext);
+        public void GoToContext(Context newContext) {
+            _contextService.UpdateGameContext(newContext);
+        }
+
+        public void GoToPreviousContext() {
+            _contextService.UpdateGameContext(_contextService.ContextsInfo.PreviousContext);
         }
 
         public void QuitGame() {
             // TODO - Some effect and/or confirmation before quitting
-            _gameContext.QuitApplication();
+            _contextService.QuitApplication();
         }
 
     }

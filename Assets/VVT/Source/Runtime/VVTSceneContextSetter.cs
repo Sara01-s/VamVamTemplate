@@ -4,13 +4,13 @@ namespace VVT.Runtime {
 
     internal sealed class VVTSceneContextSetter : MonoBehaviour {
         
-        [SerializeField] private GameContext _sceneInitContext;
+        [SerializeField] private Context _sceneInitContext;
         [SerializeField] private Optional<float> _delay;
 
-        private IContextService _gameContext;
+        private IContextService _contextService;
 
         private void Awake() {
-            _gameContext = Services.Instance.GetService<IContextService>();
+            _contextService = Services.Instance.GetService<IContextService>();
         }
 
         private void Start() {
@@ -23,7 +23,7 @@ namespace VVT.Runtime {
         }
 
         private void UpdateContext() {
-            _gameContext.UpdateGameContext(_gameContext.Info.PreviousContext, _sceneInitContext);
+            _contextService.UpdateGameContext(_sceneInitContext);
         }
 
 

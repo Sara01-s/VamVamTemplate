@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Console
+  m_Title: Inspector
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -116,10 +116,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 722.8
-  m_MinSize: {x: 400, y: 200}
+  m_MinSize: {x: 400, y: 150}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 812
+  controlID: 637
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,10 +141,10 @@ MonoBehaviour:
     y: 0
     width: 1129.6
     height: 722.8
-  m_MinSize: {x: 300, y: 200}
+  m_MinSize: {x: 300, y: 150}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 813
+  controlID: 607
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,11 +166,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1129.6
-    height: 379.2
+    height: 380
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 765
+  controlID: 520
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,7 +189,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 278.4
-    height: 379.2
+    height: 380
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
@@ -215,7 +215,7 @@ MonoBehaviour:
     x: 278.4
     y: 0
     width: 520
-    height: 379.2
+    height: 380
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 17}
@@ -241,7 +241,7 @@ MonoBehaviour:
     x: 798.4
     y: 0
     width: 331.19995
-    height: 379.2
+    height: 380
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 18}
@@ -267,13 +267,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 379.2
+    y: 380
     width: 1129.6
-    height: 343.59998
-  m_MinSize: {x: 200, y: 100}
+    height: 342.8
+  m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 814
+  controlID: 608
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -292,7 +292,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 643.2
-    height: 343.59998
+    height: 342.8
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
@@ -301,7 +301,7 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 21}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 2
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -320,7 +320,7 @@ MonoBehaviour:
     x: 643.2
     y: 0
     width: 486.39996
-    height: 343.59998
+    height: 342.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
@@ -352,9 +352,8 @@ MonoBehaviour:
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
-  - {fileID: 23}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 0
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -376,20 +375,26 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 643.2
-    y: 452.80002
+    y: 453.6
     width: 484.39996
-    height: 322.59998
+    height: 321.8
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
   m_SerializedViewNames: []
   m_SerializedViewValues: []
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 484.39996, y: 272}
+  m_TargetSize: {x: 605.49994, y: 341}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -404,10 +409,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -193.76
-    m_HBaseRangeMax: 193.76
-    m_VBaseRangeMin: -108.8
-    m_VBaseRangeMax: 108.8
+    m_HBaseRangeMin: -242.19998
+    m_HBaseRangeMax: 242.19998
+    m_VBaseRangeMin: -136.40001
+    m_VBaseRangeMax: 136.40001
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -426,9 +431,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 484.39996
-      height: 301.59998
+      height: 300.8
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 242.19998, y: 150.79999}
+    m_Translation: {x: 242.19998, y: 150.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -436,15 +441,15 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -242.19998
-      y: -150.79999
+      y: -150.4
       width: 484.39996
-      height: 301.59998
+      height: 300.8
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 605.49994, y: 403.24997}
+  m_LastWindowPixelSize: {x: 605.49994, y: 402.25}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
-  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_LowResolutionForAspectRatios: 00000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 --- !u!114 &16
@@ -470,17 +475,23 @@ MonoBehaviour:
     x: 0
     y: 73.6
     width: 277.4
-    height: 358.2
+    height: 359
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 56800000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 3eacffff6ab4ffff28b6ffff62faffff74faffff86faffff98faffffaafaffffb2faffffb6faffffc6faffffd6fafffff6fafffff8faffff7e7d0000
+      m_SelectedIDs: 26820000
+      m_LastClickedID: 33318
+      m_ExpandedIDs: 92a8ffff3eacffff6ab4ffff28b6ffff62faffff74faffff86faffff98faffffaafaffffb2faffffb6faffffc6faffffd6fafffff6fafffff8faffff7e7d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -527,7 +538,12 @@ MonoBehaviour:
     x: 278.4
     y: 73.6
     width: 518
-    height: 358.2
+    height: 359
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -537,34 +553,40 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -100, y: -25.600006}
+      snapOffset: {x: -161, y: -26.399994}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
       layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 0
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -141, y: 149}
+      snapOffset: {x: -141, y: -184.6}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 1
+      snapCorner: 3
       id: unity-grid-and-snap-toolbar
       index: 1
       layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-toolbar__top
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 24.8}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
       index: 0
       layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-toolbar__top
       floating: 0
@@ -576,6 +598,8 @@ MonoBehaviour:
       id: unity-search-toolbar
       index: 1
       layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-toolbar__top
       floating: 0
@@ -587,6 +611,8 @@ MonoBehaviour:
       id: Scene View/Open Tile Palette
       index: 2
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-toolbar__top
       floating: 0
@@ -598,6 +624,8 @@ MonoBehaviour:
       id: Scene View/Tilemap Focus
       index: 3
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 0
       containerId: overlay-container--left
       floating: 0
@@ -609,6 +637,8 @@ MonoBehaviour:
       id: unity-transform-toolbar
       index: 0
       layout: 2
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 0
       containerId: overlay-container--right
       floating: 0
@@ -620,6 +650,8 @@ MonoBehaviour:
       id: Orientation
       index: 0
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -631,6 +663,8 @@ MonoBehaviour:
       id: Scene View/Light Settings
       index: 0
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -642,6 +676,8 @@ MonoBehaviour:
       id: Scene View/Camera
       index: 1
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -651,8 +687,10 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Constraints
-      index: 2
+      index: 1
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -662,8 +700,10 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Collisions
-      index: 3
+      index: 2
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -675,6 +715,8 @@ MonoBehaviour:
       id: Scene View/Navmesh Display
       index: 4
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -686,6 +728,8 @@ MonoBehaviour:
       id: Scene View/Agent Display
       index: 5
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -697,6 +741,8 @@ MonoBehaviour:
       id: Scene View/Obstacle Display
       index: 6
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -706,8 +752,10 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Occlusion Culling
-      index: 7
+      index: 3
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -717,8 +765,10 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Physics Debugger
-      index: 8
+      index: 4
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -728,8 +778,10 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Scene Visibility
-      index: 9
+      index: 5
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
     - dockPosition: 1
       containerId: overlay-container--right
       floating: 0
@@ -739,19 +791,87 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
+      index: 6
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: AINavigationOverlay
+      index: 7
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: APV Overlay
+      index: 8
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Cinemachine Tool Settings
+      index: 9
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Path
       index: 10
       layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 48, y: 48}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/TrailRenderer
+      index: 11
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4184139, y: 0.32585454, z: -10.026319}
+    m_Target: {x: 358.0234, y: 200.7556, z: 11.784901}
     speed: 2
     m_Value: {x: 210.09027, y: 102.455315, z: 0.06816159}
   m_RenderMode: 0
@@ -761,7 +881,6 @@ MonoBehaviour:
     section: Shading Mode
   m_ValidateTrueMetals: 0
   m_DoValidateTrueMetals: 0
-  m_ExposureSliderValue: 0
   m_SceneViewState:
     m_AlwaysRefresh: 0
     showFog: 1
@@ -800,17 +919,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: -0.2007153, y: 0.110820524, z: -0.0228576, w: -0.9731081}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.292057
+    m_Target: 26.534922
     speed: 2
     m_Value: 123.223114
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -854,38 +973,45 @@ MonoBehaviour:
     x: 798.4
     y: 73.6
     width: 329.19995
-    height: 358.2
+    height: 359
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
   m_SearchFilter:
     m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
-    m_VersionControlStates: []
-    m_SoftLockControlStates: []
     m_ReferencingInstanceIDs: 
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Game/Scenes
     m_Globs: []
     m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Unity\Proyectos\VamVamTemplate
+  m_LastProjectPath: D:\Unity\Proyectos\TDN2_02
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 5a6e0000
     m_LastClickedID: 28250
-    m_ExpandedIDs: ffffffff00000000a47c0000a67c0000a87c0000aa7c0000ac7c0000ae7c0000b07c0000b27c0000b47c0000b67c00001c7d00002a7d000050800000
+    m_ExpandedIDs: 00000000d07b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -910,10 +1036,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 71.79999}
-    m_SelectedIDs: 56800000
-    m_LastClickedID: 32854
-    m_ExpandedIDs: ffffffff00000000a47c0000a67c0000a87c0000aa7c0000ac7c0000ae7c0000b07c0000b27c0000b47c0000b67c00001c7d00002a7d000050800000
+    scrollPos: {x: 0, y: 131.79999}
+    m_SelectedIDs: 26820000
+    m_LastClickedID: 0
+    m_ExpandedIDs: ffffffff00000000d07b0000d47b0000107c0000127c00001a7c00002e7c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -938,8 +1064,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 56800000
-    m_LastClickedInstanceID: 32854
+    m_SelectedInstanceIDs: 26820000
+    m_LastClickedInstanceID: 33318
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -990,13 +1116,19 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 452.80002
+    y: 453.6
     width: 642.2
-    height: 322.59998
+    height: 321.8
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1021,10 +1153,16 @@ MonoBehaviour:
     y: 409.6
     width: 729.4
     height: 365.8
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
   m_LastSelectedObjectID: 45508
@@ -1052,10 +1190,16 @@ MonoBehaviour:
     y: 546.4
     width: 1064.6
     height: 229
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
   m_ViewTransforms:
     m_KeySerializationHelper:
     - {fileID: 2203072191603092707, guid: a6e7a2f01ab9944478ea814140793de3, type: 2}
@@ -1116,10 +1260,16 @@ MonoBehaviour:
     y: 73.6
     width: 405.40002
     height: 701.8
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+    m_OverlaysVisible: 1
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
@@ -1133,478 +1283,3 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &23
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_TitleContent:
-    m_Text: Test Runner
-    m_Image: {fileID: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 1071.2001
-    y: 73.6
-    width: 463.80005
-    height: 701.8
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-  m_Spl:
-    ID: 26009
-    splitterInitialOffset: 288.8
-    currentActiveSplitter: -1
-    realSizes:
-    - 216.80002
-    - 415.19998
-    relativeSizes:
-    - 0.343038
-    - 0.65696204
-    minSizes:
-    - 32
-    - 32
-    maxSizes:
-    - 0
-    - 0
-    lastTotalSize: 632
-    splitSize: 6
-    xOffset: 0
-    m_Version: 1
-    oldRealSizes: 
-    oldMinSizes: 
-    oldMaxSizes: 
-    oldSplitSize: 0
-  m_TestTypeToolbarIndex: 1
-  m_PlayModeTestListGUI:
-    m_Window: {fileID: 23}
-    m_NewResultList:
-    - id: 1005
-      uniqueId: '[Bit-Ality][suite]'
-      name: Bit-Ality
-      fullName: Bit-Ality
-      resultStatus: 1
-      duration: 0.1948655
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 
-      parentUniqueId: 
-    - id: 1010
-      uniqueId: '[VamVam.Tests.dll][suite]'
-      name: VamVam.Tests.dll
-      fullName: D:/Unity/Proyectos/VamVamUnityTemplate/Library/ScriptAssemblies/VamVam.Tests.dll
-      resultStatus: 1
-      duration: 0.1653885
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1005
-      parentUniqueId: '[Bit-Ality][suite]'
-    - id: 1011
-      uniqueId: VamVam.Tests.dll/[VamVam][suite]
-      name: VamVam
-      fullName: VamVam
-      resultStatus: 1
-      duration: 0.1321923
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1010
-      parentUniqueId: '[VamVam.Tests.dll][suite]'
-    - id: 1012
-      uniqueId: VamVam.Tests.dll/VamVam/[VamVam.Tests][VamVam.Tests][suite]
-      name: Tests
-      fullName: VamVam.Tests
-      resultStatus: 1
-      duration: 0.1225871
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1011
-      parentUniqueId: VamVam.Tests.dll/[VamVam][suite]
-    - id: 1007
-      uniqueId: VamVam.Tests.dll/VamVam/Tests/[VamVam.Tests][VamVam.Tests.Test_UIToggler][suite]
-      name: Test_UIToggler
-      fullName: VamVam.Tests.Test_UIToggler
-      resultStatus: 1
-      duration: 0.1151798
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1012
-      parentUniqueId: VamVam.Tests.dll/VamVam/[VamVam.Tests][VamVam.Tests][suite]
-    - id: 1008
-      uniqueId: VamVam.Tests.dll/VamVam/Tests/Test_UIToggler/[VamVam.Tests][VamVam.Tests.Test_UIToggler.Test_UITogglerSimplePasses]
-      name: Test_UITogglerSimplePasses
-      fullName: VamVam.Tests.Test_UIToggler.Test_UITogglerSimplePasses
-      resultStatus: 1
-      duration: 0.0001484
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1007
-      parentUniqueId: VamVam.Tests.dll/VamVam/Tests/[VamVam.Tests][VamVam.Tests.Test_UIToggler][suite]
-    - id: 1009
-      uniqueId: VamVam.Tests.dll/VamVam/Tests/Test_UIToggler/[VamVam.Tests][VamVam.Tests.Test_UIToggler.Test_UITogglerWithEnumeratorPasses]
-      name: Test_UITogglerWithEnumeratorPasses
-      fullName: VamVam.Tests.Test_UIToggler.Test_UITogglerWithEnumeratorPasses
-      resultStatus: 1
-      duration: 0.0340159
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1007
-      parentUniqueId: VamVam.Tests.dll/VamVam/Tests/[VamVam.Tests][VamVam.Tests.Test_UIToggler][suite]
-    m_ResultText: Test_UITogglerSimplePasses (0,000s)
-    m_ResultStacktrace: 
-    m_TestListState:
-      scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a260d110
-      m_LastClickedID: 282157218
-      m_ExpandedIDs: 8e0283bddd3033d006a5c9e83f48e2efd97db167ffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_TestRunnerUIFilter:
-      PassedHidden: 0
-      FailedHidden: 0
-      NotRunHidden: 0
-      m_SearchString: 
-      selectedCategoryMask: 0
-      availableCategories:
-      - Uncategorized
-    m_SelectedOption: 0
-  m_EditModeTestListGUI:
-    m_Window: {fileID: 23}
-    m_NewResultList:
-    - id: 1000
-      uniqueId: '[Terror game][suite]'
-      name: Terror game
-      fullName: Terror game
-      resultStatus: 0
-      duration: 0
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 
-      parentUniqueId: 
-    - id: 1007
-      uniqueId: '[VamVam.EditModeTests.dll][suite]'
-      name: VamVam.EditModeTests.dll
-      fullName: D:/Unity/Proyectos/VamVamUnityTemplate/Library/ScriptAssemblies/VamVam.EditModeTests.dll
-      resultStatus: 1
-      duration: 0.3300282
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1000
-      parentUniqueId: '[Bit-Ality][suite]'
-    - id: 1008
-      uniqueId: VamVam.EditModeTests.dll/[VamVam][suite]
-      name: VamVam
-      fullName: VamVam
-      resultStatus: 1
-      duration: 0.3294842
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1007
-      parentUniqueId: '[VamVam.EditModeTests.dll][suite]'
-    - id: 1009
-      uniqueId: VamVam.EditModeTests.dll/VamVam/[VamVam.EditModeTests][VamVam.EditModeTests][suite]
-      name: EditModeTests
-      fullName: VamVam.EditModeTests
-      resultStatus: 1
-      duration: 0.3292368
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1008
-      parentUniqueId: VamVam.EditModeTests.dll/[VamVam][suite]
-    - id: 1005
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest][suite]
-      name: Test_EditModeTest
-      fullName: VamVam.EditModeTests.Test_EditModeTest
-      resultStatus: 1
-      duration: 0.3253979
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1009
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/[VamVam.EditModeTests][VamVam.EditModeTests][suite]
-    - id: 1009
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException][suite]
-      name: Sum_NegativeParameters_ThrowsException
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException
-      resultStatus: 1
-      duration: 0.0993665
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1005
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest][suite]
-    - id: 1007
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/Sum_NegativeParameters_ThrowsException/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException(-1,1)]
-      name: Sum_NegativeParameters_ThrowsException(-1,1)
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException(-1,1)
-      resultStatus: 1
-      duration: 0.0927691
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException][suite]
-    - id: 1008
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/Sum_NegativeParameters_ThrowsException/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException(1,-1)]
-      name: Sum_NegativeParameters_ThrowsException(1,-1)
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException(1,-1)
-      resultStatus: 1
-      duration: 0.0010458
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1009
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_NegativeParameters_ThrowsException][suite]
-    - id: 1013
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog][suite]
-      name: Sum_ParametersArePositive_ReturnsCorrectLog
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog
-      resultStatus: 1
-      duration: 0.0319883
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 1
-      categories: []
-      parentId: 1005
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest][suite]
-    - id: 1010
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/Sum_ParametersArePositive_ReturnsCorrectLog/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog(10,20,30)]
-      name: Sum_ParametersArePositive_ReturnsCorrectLog(10,20,30)
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog(10,20,30)
-      resultStatus: 1
-      duration: 0.0244954
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1013
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog][suite]
-    - id: 1011
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/Sum_ParametersArePositive_ReturnsCorrectLog/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog(2,1,3)]
-      name: Sum_ParametersArePositive_ReturnsCorrectLog(2,1,3)
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog(2,1,3)
-      resultStatus: 1
-      duration: 0.0008206
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1013
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog][suite]
-    - id: 1012
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/Sum_ParametersArePositive_ReturnsCorrectLog/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog(0,0,0)]
-      name: Sum_ParametersArePositive_ReturnsCorrectLog(0,0,0)
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog(0,0,0)
-      resultStatus: 1
-      duration: 0.0005945
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1013
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectLog][suite]
-    - id: 1006
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectResult]
-      name: Sum_ParametersArePositive_ReturnsCorrectResult
-      fullName: VamVam.EditModeTests.Test_EditModeTest.Sum_ParametersArePositive_ReturnsCorrectResult
-      resultStatus: 1
-      duration: 0.0044297
-      messages: 
-      output: 
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest][suite]
-    - id: 1014
-      uniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/Test_EditModeTest/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest.TestCount]
-      name: TestCount
-      fullName: VamVam.EditModeTests.Test_EditModeTest.TestCount
-      resultStatus: 1
-      duration: 0.3127724
-      messages: 
-      output: '123
-
-'
-      stacktrace: 
-      notRunnable: 0
-      ignoredOrSkipped: 0
-      description: 
-      isSuite: 0
-      categories:
-      - Uncategorized
-      parentId: 1005
-      parentUniqueId: VamVam.EditModeTests.dll/VamVam/EditModeTests/[VamVam.EditModeTests][VamVam.EditModeTests.Test_EditModeTest][suite]
-    m_ResultText: 'TestCount (0,313s)
-
-      ---
-
-      123'
-    m_ResultStacktrace: 
-    m_TestListState:
-      scrollPos: {x: 0, y: 11}
-      m_SelectedIDs: 61a05f5a
-      m_LastClickedID: 1516216417
-      m_ExpandedIDs: fc7a6d81cffe65999f4d4f9a097c23cc5dc8ccfbb1ae8d107e960119ae78c83946a5cc59d97db167ffffff7f
-      m_RenameOverlay:
-        m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
-        m_EditFieldRect:
-          serializedVersion: 2
-          x: 0
-          y: 0
-          width: 0
-          height: 0
-        m_UserData: 0
-        m_IsWaitingForDelay: 0
-        m_IsRenaming: 0
-        m_OriginalEventType: 11
-        m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 0}
-      m_SearchString: 
-    m_TestRunnerUIFilter:
-      PassedHidden: 0
-      FailedHidden: 0
-      NotRunHidden: 0
-      m_SearchString: 
-      selectedCategoryMask: 0
-      availableCategories:
-      - Uncategorized

@@ -1,6 +1,9 @@
+using System.Collections;
+using UnityEngine;
+
 namespace VVT {
 
-    internal static class Extensions {
+    public static class Extensions {
 
         /// <summary>
         /// Returns a cut string after the target char value.
@@ -47,6 +50,44 @@ namespace VVT {
 
             return string.Empty;
         }
+
+		public static IEnumerator CO_FadeIn(this AudioSource source, AnimationCurve fadeinCurve) {
+
+			if (!source.isPlaying)
+				source.Play();
+
+			float startTime = Time.time;
+
+			while (Time.time - startTime < fadeinCurve.length) {
+				float i = (Time.time - startTime) / fadeinCurve.length;
+				float t = fadeinCurve.Evaluate(i);
+
+				source.volume = Mathf.Lerp(0.0f, fadeinCurve.Evaluate(fadeinCurve.length), t);
+
+				yield return null;
+			}
+		}
+		
+		public static IEnumerator CO_FadeOut(this AudioSource source, AnimationCurve fadeOutCurve) {
+
+			float startTime = Time.time;
+
+			while (Time.time - startTime < fadeOutCurve.length) {
+				float i = (Time.time - startTime) / fadeOutCurve.length;
+				float t = fadeOutCurve.Evaluate(i);
+
+				source.volume = Mathf.Lerp(0.0f, fadeOutCurve.Evaluate(fadeOutCurve.length), t);
+
+				if (source.volume <= 0.01f)
+					source.Stop();
+
+				yield return null;
+			}
+		}
+
+		public static GameObject GetParentObject(this GameObject gameObject) {
+			return gameObject.transform.parent.gameObject;
+		}
 
     }
 }

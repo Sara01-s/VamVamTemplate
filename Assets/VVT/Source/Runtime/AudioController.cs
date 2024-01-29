@@ -1,4 +1,7 @@
+using static Unity.Mathematics.math;
 using System.Collections.Generic;
+using UnityEngine.Assertions;
+using System.Collections;
 using UnityEngine.Audio;
 using UnityEngine;
 using System.Linq;
@@ -8,13 +11,15 @@ namespace VVT.Runtime {
 
     // If you're using this, make sure you have unity audio enabled in Edit -> Project Settings -> Audio
     /// <summary> Provides an Unity Audio system facade </summary>
+	[DefaultExecutionOrder(-50)]
     public sealed partial class AudioController : VVTMonoSystem, ISettingsDataPersistant, IAudioService {
 
         protected override string Prefix { get; set; } = "Audio Service : ";
-        
-        [System.Serializable]
+
+		[System.Serializable]
         internal class MixerData {
-            [field:SerializeField] internal int BanksAmount     { get; set; }
+			[field:SerializeField] internal string Name { get; set; }
+            [field:SerializeField, Min(0)] internal int BanksAmount { get; set; }
             [field:SerializeField] internal string BankName     { get; set; }
             [field:SerializeField] internal string ExposedValue { get; set; }
             [field:SerializeField] internal Mixer MixerTarget   { get; set; }
@@ -34,6 +39,8 @@ namespace VVT.Runtime {
             Services.Instance.RegisterService<IAudioService>(this);
 
             foreach (var mixerData in _mixersData) {
+				Assert.IsNotNull(mixerData.MixerGroup, $"Please assign a mixer group for: {mixerData.Name}");
+				
                 if (!_mixersDict.TryAdd(mixerData.MixerTarget, mixerData)) {
                     Debug.LogError($"{Prefix} Failed to register {mixerData.BankName}");
                     continue;
@@ -165,25 +172,46 @@ namespace VVT.Runtime {
         }
 
         // IAudioService implementation //
-        public void PlaySound(string soundExactName, Mixer mixer = Mixer.SFX, float volume = 1, float pitch = 1, bool is3D = false, float spatialBlend = 1) {
-            PlaySound(ParseSound(soundExactName), mixer, volume, pitch, is3D, spatialBlend);
+
+		public float MinVolume => 0.00001f;
+		public float MaxVolume => 1.0f;
+
+        public AudioSource PlaySound(string soundFileName, Mixer mixer = Mixer.SFX, float volume = 1.0f, float pitch = 1.0f, 
+							  bool loop = false, float spatialBlend = 0.0f, byte priority = 128) 
+		{
+			CheckSoundMixerOutput(soundFileName, mixer);
+            return PlaySound(NameToAudioClip(soundFileName), mixer, volume, pitch, loop, spatialBlend, priority);
         }
 
-        public void PlaySound(AudioClip clip, Mixer mixer = Mixer.SFX, float volume = 1, float pitch = 1, bool is3D = false, float spatialBlend = 1) {
+        public AudioSource PlaySound(AudioClip clip, Mixer mixer = Mixer.SFX, float volume = 1.0f, float pitch = 1.0f, 
+							  bool loop = false, float spatialBlend = 0.0f, byte priority = 128) 
+		{
             if (clip == null) {
                 Logs.LogError(Prefix + "Failed to play sound, audio clip is null");
-                return;
+                return default;
             }
+
+			if (mixer == Mixer.Master) {
+				Debug.LogError("Master mixer can't be used to play sounds directly");
+				return default;
+			}
 
             var sources = _mixersDict[mixer].AudioBanks;
             var source = GetAvailableSource(sources);
 
-            source.spatialize = is3D;
+			source.playOnAwake = false;
+            source.spatialize = spatialBlend > 0.01f;
             source.spatialBlend = spatialBlend;
             source.pitch = pitch;
-            source.volume = volume;
             source.clip = clip;
+			source.loop = loop;
+			source.priority = priority;
+			source.volume = volume;
+
             source.Play();
+
+			return source;
         }
+		
     }
 }

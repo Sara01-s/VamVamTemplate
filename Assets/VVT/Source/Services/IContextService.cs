@@ -2,16 +2,20 @@ namespace VVT {
     
     public interface IContextService {
 
-        /// <summary> Called when a new context is set </summary>
-        event System.Action<GameContext, GameContext> OnContextChanged;
+        /// <summary> 
+        /// Called when a new context is set.
+        /// First context is the previous context.
+        /// Second context is the new context.
+        /// </summary>
+        event System.Action<Context, Context> OnContextChanged;
+
+        event System.Action<bool> OnPause;
 
         /// <summary> Get relevant data from the context. </summary>
-        GameContextInfo Info { get; }
+        ContextInfo ContextsInfo { get; }
 
-        /// <summary> Update the current game context. </summary>
-        void UpdateGameContext(GameContext previous, GameContext newContext);
-        /// <summary> Update the current game context. </summary>
-        void UpdateGameContext(GameContext newContext);
+        /// <summary> Updates the current context. </summary>
+        void UpdateGameContext(Context newContext);
 
         /// <summary> Toggles the game pause state </summary>
         void ToggleGamePause();

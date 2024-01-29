@@ -20,10 +20,12 @@ namespace VVT.Runtime {
         private void InvokeEvent() {
             _onTimerEnd.Invoke();
 
-            if (_destroyObjectAfter)
+            if (_destroyObjectAfter) {
                 Destroy(gameObject);
-            else
-                Destroy(this);                  // Destroys this component, not the gameObject
+			}
+            else {
+                Destroy(this); 						// Destroys this component, not the gameObject
+			}
 
         }
 
