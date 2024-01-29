@@ -26,7 +26,214 @@ namespace VVT.Input
     ""name"": ""PlayerInputActions"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""Platformer2D"",
+            ""id"": ""42c8481a-55bf-45e3-9a6a-7f049d252f7f"",
+            ""actions"": [
+                {
+                    ""name"": ""TogglePause"",
+                    ""type"": ""Button"",
+                    ""id"": ""3194aa54-db48-442b-9663-82b372affae0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""8be1f521-670f-43da-9ec2-93678bc4137c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""997c6ea3-3af2-47dc-97a8-2c9570ea8690"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""e00bbffc-8970-4951-8206-5c573739d7e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""2959ebc6-c1a8-41fb-8599-0aa70ee0f87e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""3a9b6d76-ce45-4a4f-85bf-1c71d1e39681"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TogglePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22f26d10-d2dd-4e59-b2a6-643538b06909"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Arrows"",
+                    ""id"": ""00f221c6-3e53-4a5f-8c88-c66f106cf143"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""99f0240b-265c-408c-9e69-a020c99b434c"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""8d2a14ee-15ea-4da8-841a-aa78df4f7d51"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e2f084fa-6172-4a73-931b-ee0c0900cc7b"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""229b3cc9-448d-4398-a929-ce5c96848367"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""87c30b57-0700-4ca6-9137-f45caa1c8533"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""027382eb-8291-47d0-9ddc-00176535ea5e"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""c78baded-6b44-421a-8071-87c1e6c62778"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b10cf44b-1d79-401e-b53e-277c4be5e9ac"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""08b726a6-0cf9-413e-8127-c0833fe5a9ac"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c9f20eaa-0a95-4d7b-8b43-ae2f7662f362"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""9c7a356a-d4d0-4a28-919d-f92579540b95"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
+        },
+        {
+            ""name"": ""Platformer2DArrows"",
             ""id"": ""684c2d9b-23cc-4f44-bd9c-b64335a46e80"",
             ""actions"": [
                 {
@@ -57,16 +264,7 @@ namespace VVT.Input
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""MouseLook"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""ddb6c76b-0ad9-4a33-890f-86600faac9d5"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Interact"",
+                    ""name"": ""Action"",
                     ""type"": ""Button"",
                     ""id"": ""1429ba97-5a7c-4fef-bc2f-f04d3222cb8a"",
                     ""expectedControlType"": ""Button"",
@@ -108,7 +306,7 @@ namespace VVT.Input
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
+                    ""name"": ""Arrows"",
                     ""id"": ""b3e616f8-cafe-4299-ae51-10bb03379870"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -164,17 +362,6 @@ namespace VVT.Input
                 },
                 {
                     ""name"": """",
-                    ""id"": ""86c02b56-109c-44c9-bc1e-bd466d47f052"",
-                    ""path"": ""<Mouse>/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLook"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""47fe59e3-7395-4f0e-a323-8fa466480396"",
                     ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
@@ -191,23 +378,326 @@ namespace VVT.Input
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Interact"",
+                    ""action"": ""Action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Platformer2DWASD"",
+            ""id"": ""06e92557-ccd8-4a0e-936a-0f5e083fe903"",
+            ""actions"": [
+                {
+                    ""name"": ""TogglePause"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1c1f1e4-986d-4f5d-9e37-4cbf1078ea6a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f8c7270-4ed0-4583-9e52-0fd9142dbfb9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""a0078b72-2505-4c09-b8b4-94fe47aa9262"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Action"",
+                    ""type"": ""Button"",
+                    ""id"": ""48ccd38f-b036-4942-84d8-5bd69e43a3af"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""d14a1fda-8eb1-4b4c-8504-49b2f70fe44e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d2b81914-7bba-412c-94eb-383cab695260"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TogglePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""90b84553-c88e-408c-9545-675ec1f68e59"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""2f459e52-76d7-4127-b762-56e76ebfaf6e"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""eeaa87e3-87b7-4bff-a150-f46c60104182"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1e7edb75-f335-49e7-9453-52425ef087ee"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8326f015-32f3-4ceb-9c9f-2b53c7c97a02"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""219d941c-8764-4b2f-bcc8-94579a0a3178"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""42c91d7e-3f63-4192-8ffd-534cf14fcff2"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33aab6ad-08db-405c-af3c-912da3000ba8"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""FirstPerson"",
+            ""id"": ""5edb4bdd-d11e-4e2d-8979-98d9ee209b91"",
+            ""actions"": [
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""97c15dfb-7b3a-46a3-8a6a-e515214fcfcc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1941e6ff-877b-45f6-b09a-f2a9a28385c7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""TogglePause"",
+                    ""type"": ""Button"",
+                    ""id"": ""12faeae7-e1b8-4da0-b822-9bc8407a8e66"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseLook"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""94a8f834-6c40-4913-9d36-436e4f8a7260"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2e01c990-fa04-4bcb-8053-f0629ace29c6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TogglePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a978ed2-f86f-4650-a948-71a715135068"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8719735-57ae-4dbf-95a7-9752ddafa029"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""eba71122-7cf2-4ff5-8e09-41c638684486"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""96d4101c-5d21-491e-a3b2-74c915990272"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""df175296-f224-4b29-8148-d84a704eb528"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""037423fb-4cad-415f-97f8-ed3e93c47032"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""e9ce44de-06db-451d-8e28-a13dddd8d85b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
     ""controlSchemes"": []
 }");
-            // Gameplay
-            m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-            m_Gameplay_TogglePause = m_Gameplay.FindAction("TogglePause", throwIfNotFound: true);
-            m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
-            m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-            m_Gameplay_MouseLook = m_Gameplay.FindAction("MouseLook", throwIfNotFound: true);
-            m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
-            m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
+            // Platformer2D
+            m_Platformer2D = asset.FindActionMap("Platformer2D", throwIfNotFound: true);
+            m_Platformer2D_TogglePause = m_Platformer2D.FindAction("TogglePause", throwIfNotFound: true);
+            m_Platformer2D_Escape = m_Platformer2D.FindAction("Escape", throwIfNotFound: true);
+            m_Platformer2D_Movement = m_Platformer2D.FindAction("Movement", throwIfNotFound: true);
+            m_Platformer2D_Action = m_Platformer2D.FindAction("Action", throwIfNotFound: true);
+            m_Platformer2D_Jump = m_Platformer2D.FindAction("Jump", throwIfNotFound: true);
+            // Platformer2DArrows
+            m_Platformer2DArrows = asset.FindActionMap("Platformer2DArrows", throwIfNotFound: true);
+            m_Platformer2DArrows_TogglePause = m_Platformer2DArrows.FindAction("TogglePause", throwIfNotFound: true);
+            m_Platformer2DArrows_Escape = m_Platformer2DArrows.FindAction("Escape", throwIfNotFound: true);
+            m_Platformer2DArrows_Movement = m_Platformer2DArrows.FindAction("Movement", throwIfNotFound: true);
+            m_Platformer2DArrows_Action = m_Platformer2DArrows.FindAction("Action", throwIfNotFound: true);
+            m_Platformer2DArrows_Jump = m_Platformer2DArrows.FindAction("Jump", throwIfNotFound: true);
+            // Platformer2DWASD
+            m_Platformer2DWASD = asset.FindActionMap("Platformer2DWASD", throwIfNotFound: true);
+            m_Platformer2DWASD_TogglePause = m_Platformer2DWASD.FindAction("TogglePause", throwIfNotFound: true);
+            m_Platformer2DWASD_Escape = m_Platformer2DWASD.FindAction("Escape", throwIfNotFound: true);
+            m_Platformer2DWASD_Movement = m_Platformer2DWASD.FindAction("Movement", throwIfNotFound: true);
+            m_Platformer2DWASD_Action = m_Platformer2DWASD.FindAction("Action", throwIfNotFound: true);
+            m_Platformer2DWASD_Jump = m_Platformer2DWASD.FindAction("Jump", throwIfNotFound: true);
+            // FirstPerson
+            m_FirstPerson = asset.FindActionMap("FirstPerson", throwIfNotFound: true);
+            m_FirstPerson_Escape = m_FirstPerson.FindAction("Escape", throwIfNotFound: true);
+            m_FirstPerson_Movement = m_FirstPerson.FindAction("Movement", throwIfNotFound: true);
+            m_FirstPerson_TogglePause = m_FirstPerson.FindAction("TogglePause", throwIfNotFound: true);
+            m_FirstPerson_MouseLook = m_FirstPerson.FindAction("MouseLook", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -266,34 +756,32 @@ namespace VVT.Input
             return asset.FindBinding(bindingMask, out action);
         }
 
-        // Gameplay
-        private readonly InputActionMap m_Gameplay;
-        private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-        private readonly InputAction m_Gameplay_TogglePause;
-        private readonly InputAction m_Gameplay_Escape;
-        private readonly InputAction m_Gameplay_Movement;
-        private readonly InputAction m_Gameplay_MouseLook;
-        private readonly InputAction m_Gameplay_Interact;
-        private readonly InputAction m_Gameplay_Jump;
-        public struct GameplayActions
+        // Platformer2D
+        private readonly InputActionMap m_Platformer2D;
+        private List<IPlatformer2DActions> m_Platformer2DActionsCallbackInterfaces = new List<IPlatformer2DActions>();
+        private readonly InputAction m_Platformer2D_TogglePause;
+        private readonly InputAction m_Platformer2D_Escape;
+        private readonly InputAction m_Platformer2D_Movement;
+        private readonly InputAction m_Platformer2D_Action;
+        private readonly InputAction m_Platformer2D_Jump;
+        public struct Platformer2DActions
         {
             private @PlayerInputActions m_Wrapper;
-            public GameplayActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
-            public InputAction @TogglePause => m_Wrapper.m_Gameplay_TogglePause;
-            public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
-            public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-            public InputAction @MouseLook => m_Wrapper.m_Gameplay_MouseLook;
-            public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
-            public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-            public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+            public Platformer2DActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @TogglePause => m_Wrapper.m_Platformer2D_TogglePause;
+            public InputAction @Escape => m_Wrapper.m_Platformer2D_Escape;
+            public InputAction @Movement => m_Wrapper.m_Platformer2D_Movement;
+            public InputAction @Action => m_Wrapper.m_Platformer2D_Action;
+            public InputAction @Jump => m_Wrapper.m_Platformer2D_Jump;
+            public InputActionMap Get() { return m_Wrapper.m_Platformer2D; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-            public void AddCallbacks(IGameplayActions instance)
+            public static implicit operator InputActionMap(Platformer2DActions set) { return set.Get(); }
+            public void AddCallbacks(IPlatformer2DActions instance)
             {
-                if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-                m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+                if (instance == null || m_Wrapper.m_Platformer2DActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_Platformer2DActionsCallbackInterfaces.Add(instance);
                 @TogglePause.started += instance.OnTogglePause;
                 @TogglePause.performed += instance.OnTogglePause;
                 @TogglePause.canceled += instance.OnTogglePause;
@@ -303,18 +791,15 @@ namespace VVT.Input
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @MouseLook.started += instance.OnMouseLook;
-                @MouseLook.performed += instance.OnMouseLook;
-                @MouseLook.canceled += instance.OnMouseLook;
-                @Interact.started += instance.OnInteract;
-                @Interact.performed += instance.OnInteract;
-                @Interact.canceled += instance.OnInteract;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
             }
 
-            private void UnregisterCallbacks(IGameplayActions instance)
+            private void UnregisterCallbacks(IPlatformer2DActions instance)
             {
                 @TogglePause.started -= instance.OnTogglePause;
                 @TogglePause.performed -= instance.OnTogglePause;
@@ -325,40 +810,285 @@ namespace VVT.Input
                 @Movement.started -= instance.OnMovement;
                 @Movement.performed -= instance.OnMovement;
                 @Movement.canceled -= instance.OnMovement;
-                @MouseLook.started -= instance.OnMouseLook;
-                @MouseLook.performed -= instance.OnMouseLook;
-                @MouseLook.canceled -= instance.OnMouseLook;
-                @Interact.started -= instance.OnInteract;
-                @Interact.performed -= instance.OnInteract;
-                @Interact.canceled -= instance.OnInteract;
+                @Action.started -= instance.OnAction;
+                @Action.performed -= instance.OnAction;
+                @Action.canceled -= instance.OnAction;
                 @Jump.started -= instance.OnJump;
                 @Jump.performed -= instance.OnJump;
                 @Jump.canceled -= instance.OnJump;
             }
 
-            public void RemoveCallbacks(IGameplayActions instance)
+            public void RemoveCallbacks(IPlatformer2DActions instance)
             {
-                if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+                if (m_Wrapper.m_Platformer2DActionsCallbackInterfaces.Remove(instance))
                     UnregisterCallbacks(instance);
             }
 
-            public void SetCallbacks(IGameplayActions instance)
+            public void SetCallbacks(IPlatformer2DActions instance)
             {
-                foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+                foreach (var item in m_Wrapper.m_Platformer2DActionsCallbackInterfaces)
                     UnregisterCallbacks(item);
-                m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+                m_Wrapper.m_Platformer2DActionsCallbackInterfaces.Clear();
                 AddCallbacks(instance);
             }
         }
-        public GameplayActions @Gameplay => new GameplayActions(this);
-        public interface IGameplayActions
+        public Platformer2DActions @Platformer2D => new Platformer2DActions(this);
+
+        // Platformer2DArrows
+        private readonly InputActionMap m_Platformer2DArrows;
+        private List<IPlatformer2DArrowsActions> m_Platformer2DArrowsActionsCallbackInterfaces = new List<IPlatformer2DArrowsActions>();
+        private readonly InputAction m_Platformer2DArrows_TogglePause;
+        private readonly InputAction m_Platformer2DArrows_Escape;
+        private readonly InputAction m_Platformer2DArrows_Movement;
+        private readonly InputAction m_Platformer2DArrows_Action;
+        private readonly InputAction m_Platformer2DArrows_Jump;
+        public struct Platformer2DArrowsActions
+        {
+            private @PlayerInputActions m_Wrapper;
+            public Platformer2DArrowsActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @TogglePause => m_Wrapper.m_Platformer2DArrows_TogglePause;
+            public InputAction @Escape => m_Wrapper.m_Platformer2DArrows_Escape;
+            public InputAction @Movement => m_Wrapper.m_Platformer2DArrows_Movement;
+            public InputAction @Action => m_Wrapper.m_Platformer2DArrows_Action;
+            public InputAction @Jump => m_Wrapper.m_Platformer2DArrows_Jump;
+            public InputActionMap Get() { return m_Wrapper.m_Platformer2DArrows; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(Platformer2DArrowsActions set) { return set.Get(); }
+            public void AddCallbacks(IPlatformer2DArrowsActions instance)
+            {
+                if (instance == null || m_Wrapper.m_Platformer2DArrowsActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_Platformer2DArrowsActionsCallbackInterfaces.Add(instance);
+                @TogglePause.started += instance.OnTogglePause;
+                @TogglePause.performed += instance.OnTogglePause;
+                @TogglePause.canceled += instance.OnTogglePause;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+            }
+
+            private void UnregisterCallbacks(IPlatformer2DArrowsActions instance)
+            {
+                @TogglePause.started -= instance.OnTogglePause;
+                @TogglePause.performed -= instance.OnTogglePause;
+                @TogglePause.canceled -= instance.OnTogglePause;
+                @Escape.started -= instance.OnEscape;
+                @Escape.performed -= instance.OnEscape;
+                @Escape.canceled -= instance.OnEscape;
+                @Movement.started -= instance.OnMovement;
+                @Movement.performed -= instance.OnMovement;
+                @Movement.canceled -= instance.OnMovement;
+                @Action.started -= instance.OnAction;
+                @Action.performed -= instance.OnAction;
+                @Action.canceled -= instance.OnAction;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+            }
+
+            public void RemoveCallbacks(IPlatformer2DArrowsActions instance)
+            {
+                if (m_Wrapper.m_Platformer2DArrowsActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IPlatformer2DArrowsActions instance)
+            {
+                foreach (var item in m_Wrapper.m_Platformer2DArrowsActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_Platformer2DArrowsActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public Platformer2DArrowsActions @Platformer2DArrows => new Platformer2DArrowsActions(this);
+
+        // Platformer2DWASD
+        private readonly InputActionMap m_Platformer2DWASD;
+        private List<IPlatformer2DWASDActions> m_Platformer2DWASDActionsCallbackInterfaces = new List<IPlatformer2DWASDActions>();
+        private readonly InputAction m_Platformer2DWASD_TogglePause;
+        private readonly InputAction m_Platformer2DWASD_Escape;
+        private readonly InputAction m_Platformer2DWASD_Movement;
+        private readonly InputAction m_Platformer2DWASD_Action;
+        private readonly InputAction m_Platformer2DWASD_Jump;
+        public struct Platformer2DWASDActions
+        {
+            private @PlayerInputActions m_Wrapper;
+            public Platformer2DWASDActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @TogglePause => m_Wrapper.m_Platformer2DWASD_TogglePause;
+            public InputAction @Escape => m_Wrapper.m_Platformer2DWASD_Escape;
+            public InputAction @Movement => m_Wrapper.m_Platformer2DWASD_Movement;
+            public InputAction @Action => m_Wrapper.m_Platformer2DWASD_Action;
+            public InputAction @Jump => m_Wrapper.m_Platformer2DWASD_Jump;
+            public InputActionMap Get() { return m_Wrapper.m_Platformer2DWASD; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(Platformer2DWASDActions set) { return set.Get(); }
+            public void AddCallbacks(IPlatformer2DWASDActions instance)
+            {
+                if (instance == null || m_Wrapper.m_Platformer2DWASDActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_Platformer2DWASDActionsCallbackInterfaces.Add(instance);
+                @TogglePause.started += instance.OnTogglePause;
+                @TogglePause.performed += instance.OnTogglePause;
+                @TogglePause.canceled += instance.OnTogglePause;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Action.started += instance.OnAction;
+                @Action.performed += instance.OnAction;
+                @Action.canceled += instance.OnAction;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+            }
+
+            private void UnregisterCallbacks(IPlatformer2DWASDActions instance)
+            {
+                @TogglePause.started -= instance.OnTogglePause;
+                @TogglePause.performed -= instance.OnTogglePause;
+                @TogglePause.canceled -= instance.OnTogglePause;
+                @Escape.started -= instance.OnEscape;
+                @Escape.performed -= instance.OnEscape;
+                @Escape.canceled -= instance.OnEscape;
+                @Movement.started -= instance.OnMovement;
+                @Movement.performed -= instance.OnMovement;
+                @Movement.canceled -= instance.OnMovement;
+                @Action.started -= instance.OnAction;
+                @Action.performed -= instance.OnAction;
+                @Action.canceled -= instance.OnAction;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+            }
+
+            public void RemoveCallbacks(IPlatformer2DWASDActions instance)
+            {
+                if (m_Wrapper.m_Platformer2DWASDActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IPlatformer2DWASDActions instance)
+            {
+                foreach (var item in m_Wrapper.m_Platformer2DWASDActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_Platformer2DWASDActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public Platformer2DWASDActions @Platformer2DWASD => new Platformer2DWASDActions(this);
+
+        // FirstPerson
+        private readonly InputActionMap m_FirstPerson;
+        private List<IFirstPersonActions> m_FirstPersonActionsCallbackInterfaces = new List<IFirstPersonActions>();
+        private readonly InputAction m_FirstPerson_Escape;
+        private readonly InputAction m_FirstPerson_Movement;
+        private readonly InputAction m_FirstPerson_TogglePause;
+        private readonly InputAction m_FirstPerson_MouseLook;
+        public struct FirstPersonActions
+        {
+            private @PlayerInputActions m_Wrapper;
+            public FirstPersonActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Escape => m_Wrapper.m_FirstPerson_Escape;
+            public InputAction @Movement => m_Wrapper.m_FirstPerson_Movement;
+            public InputAction @TogglePause => m_Wrapper.m_FirstPerson_TogglePause;
+            public InputAction @MouseLook => m_Wrapper.m_FirstPerson_MouseLook;
+            public InputActionMap Get() { return m_Wrapper.m_FirstPerson; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(FirstPersonActions set) { return set.Get(); }
+            public void AddCallbacks(IFirstPersonActions instance)
+            {
+                if (instance == null || m_Wrapper.m_FirstPersonActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_FirstPersonActionsCallbackInterfaces.Add(instance);
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @TogglePause.started += instance.OnTogglePause;
+                @TogglePause.performed += instance.OnTogglePause;
+                @TogglePause.canceled += instance.OnTogglePause;
+                @MouseLook.started += instance.OnMouseLook;
+                @MouseLook.performed += instance.OnMouseLook;
+                @MouseLook.canceled += instance.OnMouseLook;
+            }
+
+            private void UnregisterCallbacks(IFirstPersonActions instance)
+            {
+                @Escape.started -= instance.OnEscape;
+                @Escape.performed -= instance.OnEscape;
+                @Escape.canceled -= instance.OnEscape;
+                @Movement.started -= instance.OnMovement;
+                @Movement.performed -= instance.OnMovement;
+                @Movement.canceled -= instance.OnMovement;
+                @TogglePause.started -= instance.OnTogglePause;
+                @TogglePause.performed -= instance.OnTogglePause;
+                @TogglePause.canceled -= instance.OnTogglePause;
+                @MouseLook.started -= instance.OnMouseLook;
+                @MouseLook.performed -= instance.OnMouseLook;
+                @MouseLook.canceled -= instance.OnMouseLook;
+            }
+
+            public void RemoveCallbacks(IFirstPersonActions instance)
+            {
+                if (m_Wrapper.m_FirstPersonActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IFirstPersonActions instance)
+            {
+                foreach (var item in m_Wrapper.m_FirstPersonActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_FirstPersonActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public FirstPersonActions @FirstPerson => new FirstPersonActions(this);
+        public interface IPlatformer2DActions
         {
             void OnTogglePause(InputAction.CallbackContext context);
             void OnEscape(InputAction.CallbackContext context);
             void OnMovement(InputAction.CallbackContext context);
-            void OnMouseLook(InputAction.CallbackContext context);
-            void OnInteract(InputAction.CallbackContext context);
+            void OnAction(InputAction.CallbackContext context);
             void OnJump(InputAction.CallbackContext context);
+        }
+        public interface IPlatformer2DArrowsActions
+        {
+            void OnTogglePause(InputAction.CallbackContext context);
+            void OnEscape(InputAction.CallbackContext context);
+            void OnMovement(InputAction.CallbackContext context);
+            void OnAction(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
+        }
+        public interface IPlatformer2DWASDActions
+        {
+            void OnTogglePause(InputAction.CallbackContext context);
+            void OnEscape(InputAction.CallbackContext context);
+            void OnMovement(InputAction.CallbackContext context);
+            void OnAction(InputAction.CallbackContext context);
+            void OnJump(InputAction.CallbackContext context);
+        }
+        public interface IFirstPersonActions
+        {
+            void OnEscape(InputAction.CallbackContext context);
+            void OnMovement(InputAction.CallbackContext context);
+            void OnTogglePause(InputAction.CallbackContext context);
+            void OnMouseLook(InputAction.CallbackContext context);
         }
     }
 }
