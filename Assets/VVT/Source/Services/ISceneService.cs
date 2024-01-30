@@ -4,6 +4,11 @@ namespace VVT {
     /// Get this service using Service Locator to access VVT Scene Management system!
     /// </summary>
     public interface ISceneService {
+
+		/// <summary>
+        /// Set this value to true to activate scene transitions.
+        /// </summary>
+		bool UseTransitions { get; set; }
         
         /// <summary>
         /// Asynchronously loads a scene by its scene build index.
