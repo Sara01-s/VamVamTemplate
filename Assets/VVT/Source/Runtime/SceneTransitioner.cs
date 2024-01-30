@@ -9,7 +9,6 @@ namespace VVT.Runtime {
 		internal bool IsTransitionDone { get; private set; }
 
 		private readonly Image _image;
-		private readonly MaterialPropertyBlock _materialProperties;
 
 		private readonly int _transitionProgress = Shader.PropertyToID("_Progress");
 		private readonly int _isTransitionInverted = Shader.PropertyToID("_Invert");
@@ -26,7 +25,6 @@ namespace VVT.Runtime {
 			_fadeInCurve = fadeInCurve;
 			_fadeOutCurve = fadeOutCurve;
 
-			_materialProperties = new();
 			_image.enabled = false;
 		}
 
@@ -40,7 +38,7 @@ namespace VVT.Runtime {
 
 				float t = elapsedTime / _fadeInDuration;
 
-				_image.material.SetFloat(_transitionProgress, _fadeOutCurve.Evaluate(t));
+				_image.material.SetFloat(_transitionProgress, _fadeInCurve.Evaluate(t));
 
 				elapsedTime += Time.deltaTime;
 				yield return null;
@@ -57,11 +55,11 @@ namespace VVT.Runtime {
 
 			float elapsedTime = 0.0f;
 
-			while (elapsedTime < _fadeInDuration) {
+			while (elapsedTime < _fadeOutDuration) {
 
-				float t = elapsedTime / _fadeInDuration;
+				float t = elapsedTime / _fadeOutDuration;
 
-				_image.material.SetFloat(_transitionProgress, _fadeInCurve.Evaluate(t));
+				_image.material.SetFloat(_transitionProgress, _fadeOutCurve.Evaluate(t));
 
 				elapsedTime += Time.deltaTime;
 				yield return null;
