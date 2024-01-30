@@ -64,20 +64,20 @@ namespace VVT.Runtime {
 
 					_currentAudioSource = _audioService.PlaySound(clip, _mixerOutput, _overrideVolume, pitch, _loop, _spatialBlend);
 					if (_fadeIn) {
-						StartCoroutine(_currentAudioSource.CO_FadeIn(_fadeInCurve));
+						_currentAudioSource.FadeIn(_fadeInCurve);
 					}
 					return;
 				}
 
 				_currentAudioSource = _audioService.PlaySound(_audioClip, _mixerOutput, _overrideVolume, pitch, _loop, _spatialBlend);
 				if (_fadeIn) {
-					StartCoroutine(_currentAudioSource.CO_FadeIn(_fadeInCurve));
+					_currentAudioSource.FadeIn(_fadeInCurve);
 				}
 			}
 			else {
 				_currentAudioSource = _audioService.PlaySound(_audioFileName, _mixerOutput, _overrideVolume, pitch, _loop, _spatialBlend);
 				if (_fadeOut) {
-					StartCoroutine(_currentAudioSource.CO_FadeIn(_fadeInCurve));
+					_currentAudioSource.FadeIn(_fadeInCurve);
 				}
 			}
 		}
@@ -137,7 +137,7 @@ namespace VVT.Runtime {
 				return;
 			}
 
-			StartCoroutine(_currentAudioSource.CO_FadeOut(_fadeOutCurve));
+			_currentAudioSource.FadeOut(_fadeOutCurve);
 		}
 
 		public void ResumeSmooth() {
@@ -152,7 +152,7 @@ namespace VVT.Runtime {
 				return;
 			}
 
-			StartCoroutine(_currentAudioSource.CO_FadeIn(_fadeInCurve));
+			_currentAudioSource.FadeIn(_fadeInCurve);
 		}
 
 		public void StopSmooth() {
@@ -167,7 +167,7 @@ namespace VVT.Runtime {
 				return;
 			}
 
-			StartCoroutine(_currentAudioSource.CO_FadeOut(_fadeOutCurve));
+			_currentAudioSource.FadeOut(_fadeOutCurve);
 		}
 
 	}
