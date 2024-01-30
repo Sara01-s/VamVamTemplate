@@ -14,13 +14,13 @@ namespace VVT {
             _value = initialValue;
         }
 
-        public void IfPresent(Action<T> action) {
+        public readonly void IfPresent(Action<T> action) {
             if (_value != null) {
                 action(_value);
             }
         }
 
-        public T OrElse(T elseValue) {
+        public readonly T OrElse(T elseValue) {
             if (_value == null) {
                 return elseValue;
             }
@@ -28,7 +28,7 @@ namespace VVT {
             return _value;
         }
 
-        public T OrElseThrow(Exception exception) {
+        public readonly T OrElseThrow(Exception exception) {
             if (_value == null) {
                 throw exception;
             }
@@ -37,7 +37,7 @@ namespace VVT {
         }
 
         public readonly bool Enabled => _enabled;
-        public T Value { get => _value; set => value = _value; }
+        public T Value { readonly get => _value; set => _value = value; }
 
     }
     
