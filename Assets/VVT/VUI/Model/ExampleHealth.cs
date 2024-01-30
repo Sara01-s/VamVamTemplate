@@ -1,5 +1,4 @@
 using static Unity.Mathematics.math;
-using UnityEngine;
 
 namespace VVT.UI {
 
@@ -7,7 +6,7 @@ namespace VVT.UI {
 
 		internal int CurrentHealth { get; private set; }
 
-		private int _startingHealth;
+		private readonly int _startingHealth;
 
 		internal Health(int startingHealth) {
 			_startingHealth = startingHealth;
