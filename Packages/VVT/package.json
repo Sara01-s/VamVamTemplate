@@ -1,0 +1,23 @@
+{
+	"name": "com.vamvamstudios.vvt",
+	"version": "1.0.1",
+	"displayName": "Vam Vam Template",
+	"description": "Custom Unity Template for creating games",
+	"unity": "2022.3",
+	"unityRelease": "7f1",
+	"dependencies": {
+		"com.unity.mathematics": "1.2.6",
+		"com.unity.inputsystem": "1.6.3"
+	},
+	"keywords": [
+		"VamVam",
+		"Template",
+		"Library"
+	],
+	"author": {
+		"name": "Sara San Martín",
+		"email": "saraosses01@gmail.com",
+		"url": "https://github.com/Sara01-s"
+	},
+	"type": "module"
+}
