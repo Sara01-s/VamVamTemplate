@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace VVT.Runtime {
 
+	/// <summary>
+    /// Represents an audio player that can play, pause, resume, and stop audio.
+    /// </summary>
 	public sealed class VVTAudioPlayer : MonoBehaviour {
 
 		[Header("Output Settings")]
@@ -49,6 +52,9 @@ namespace VVT.Runtime {
 			}
 		}
 
+		/// <summary>
+        /// Plays an audio clip or file with optional pitch randomization and fade-in.
+        /// </summary>
 		public void Play() {
 			// Note: a pitch = 0 will not sound at all, sorry if you ended here because of that...
 			float pitch = _randomizePitch 
@@ -82,11 +88,19 @@ namespace VVT.Runtime {
 			}
 		}
 
+		/// <summary>
+        /// Plays the specified audio clip with pitch calculated by the CalculatePitch method.
+        /// </summary>
+        /// <param name="soundClip">The audio clip to play.</param>
 		public void PlaySound(AudioClip soundClip) {
 			float pitch = CalculatePitch();
 			_audioService.PlaySound(soundClip, _mixerOutput, _overrideVolume, pitch, _loop, _spatialBlend);
 		}
-
+		
+		/// <summary>
+        /// Plays the specified audio file with pitch calculated by the CalculatePitch method.
+        /// </summary>
+        /// <param name="soundFileName">The name of the audio file to play.</param>
 		public void PlaySound(string soundFileName) {
 			float pitch = CalculatePitch();
 			_audioService.PlaySound(soundFileName, _mixerOutput, _overrideVolume, pitch, _loop, _spatialBlend);
@@ -98,6 +112,9 @@ namespace VVT.Runtime {
 				: _overridePitch;
 		}
 
+		/// <summary>
+        /// Pauses the currently playing audio immediately.
+        /// </summary>
 		public void PauseImmediate() {
 			if (_currentAudioSource == null && !_currentAudioSource.isPlaying) {
 				Debug.LogError("Failed to pause, audio is not currently playing");
@@ -107,6 +124,9 @@ namespace VVT.Runtime {
 			_currentAudioSource.Pause();
 		}
 
+		/// <summary>
+        /// Resumes the currently paused audio immediately.
+        /// </summary>
 		public void ResumeImmediate() {
 			if (_currentAudioSource.isPlaying) {
 				Debug.LogError("Failed to resume, audio is not currently paused");
@@ -116,6 +136,9 @@ namespace VVT.Runtime {
 			_currentAudioSource.Play();
 		}
 
+		/// <summary>
+        /// Stops the currently playing audio immediately.
+        /// </summary>
 		public void StopImmediate() {
 			if (_currentAudioSource == null && !_currentAudioSource.isPlaying) {
 				Debug.LogError("Failed to resume, audio is not currently paused");
@@ -124,7 +147,10 @@ namespace VVT.Runtime {
 
 			_currentAudioSource.Stop();
 		}
-
+		
+		/// <summary>
+        /// Pauses the currently playing audio with a smooth fade-out.
+        /// </summary>
 		public void PauseSmooth() {
 			if (_currentAudioSource == null && !_currentAudioSource.isPlaying) {
 				Debug.LogError("Failed to pause, audio is not currently playing");
@@ -140,6 +166,9 @@ namespace VVT.Runtime {
 			_currentAudioSource.FadeOut(_fadeOutCurve);
 		}
 
+		/// <summary>
+        /// Resumes the currently paused audio with a smooth fade-in.
+        /// </summary>
 		public void ResumeSmooth() {
 			if (_currentAudioSource.isPlaying) {
 				Debug.LogError("Failed to resume, audio is not currently paused");
@@ -155,6 +184,9 @@ namespace VVT.Runtime {
 			_currentAudioSource.FadeIn(_fadeInCurve);
 		}
 
+		/// <summary>
+        /// Stops the currently playing audio with a smooth fade-out.
+        /// </summary>
 		public void StopSmooth() {
 			if (_currentAudioSource == null && !_currentAudioSource.isPlaying) {
 				Debug.LogError("Failed to resume, audio is not currently paused");
