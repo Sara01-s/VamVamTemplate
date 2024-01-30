@@ -11,9 +11,9 @@ namespace VVT {
 		[SerializeField, ShowIf(nameof(_useTag))] private string _tagToDetect;
 		[SerializeField, HideIf(nameof(_useTag))] private LayerMask _layerToDetect;
 
-		[SerializeField] private UnityEvent<Collider2D> _onTriggerEnter;
-		[SerializeField] private UnityEvent<Collider2D> _onTriggerStay;
-		[SerializeField] private UnityEvent<Collider2D> _onTriggerExit;
+		[SerializeField] private UnityEvent<Collider2D> _onTriggerEnter2D;
+		[SerializeField] private UnityEvent<Collider2D> _onTriggerStay2D;
+		[SerializeField] private UnityEvent<Collider2D> _onTriggerExit2D;
 
 		private void Awake() {
 			GetComponent<Collider2D>().isTrigger = true;
@@ -22,42 +22,42 @@ namespace VVT {
 		private void OnTriggerEnter2D(Collider2D other) {
 			if (_useTag) {
 				if (other.CompareTag(_tagToDetect)) {
-					_onTriggerEnter?.Invoke(other);
+					_onTriggerEnter2D?.Invoke(other);
 				}
 
 				return;
 			}
 
 			if (Comparator.CompareLayerAndMask(other.gameObject.layer, _layerToDetect)) {
-				_onTriggerEnter?.Invoke(other);
+				_onTriggerEnter2D?.Invoke(other);
 			}
 		}
 
 		private void OnTriggerStay2D(Collider2D other) {
 			if (_useTag) {
 				if (other.CompareTag(_tagToDetect)) {
-					_onTriggerStay?.Invoke(other);
+					_onTriggerStay2D?.Invoke(other);
 				}
 
 				return;
 			}
 
 			if (Comparator.CompareLayerAndMask(other.gameObject.layer, _layerToDetect)) {
-				_onTriggerStay?.Invoke(other);
+				_onTriggerStay2D?.Invoke(other);
 			}
 		}
 
 		private void OnTriggerExit2D(Collider2D other) {
 			if (_useTag) {
 				if (other.CompareTag(_tagToDetect)) {
-					_onTriggerExit?.Invoke(other);
+					_onTriggerExit2D?.Invoke(other);
 				}
 
 				return;
 			}
 
 			if (Comparator.CompareLayerAndMask(other.gameObject.layer, _layerToDetect)) {
-				_onTriggerExit?.Invoke(other);
+				_onTriggerExit2D?.Invoke(other);
 			}
 		}
 
