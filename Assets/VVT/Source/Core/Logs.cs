@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System;
 
 namespace VVT {
@@ -12,31 +11,6 @@ namespace VVT {
 
     /// <summary> Unity's Debug class facade with extra utilities </summary>
     public static class Logs {
-
-        private static Dictionary<LogColor, string> ColorsMap = new() {
-            { LogColor.Aqua,      "aqua"      },
-            { LogColor.Black,     "black"     },
-            { LogColor.Blue,      "blue"      },
-            { LogColor.Brown,     "brown"     },
-            { LogColor.Cyan,      "cyan"      },
-            { LogColor.DarkBlue,  "darkBlue"  },
-            { LogColor.Fuchsia,   "fuchsia"   },
-            { LogColor.Green,     "green"     },
-            { LogColor.Grey,      "grey"      },
-            { LogColor.LightBLue, "lightblue" },
-            { LogColor.Lime,      "lime"      },
-            { LogColor.Magenta,   "magenta"   },
-            { LogColor.Maroon,    "maroon"    },
-            { LogColor.Navy,      "navy"      },
-            { LogColor.Olive,     "olive"     },
-            { LogColor.Orange,    "orange"    },
-            { LogColor.Purple,    "purple"    },
-            { LogColor.Red,       "red"       },
-            { LogColor.Silver,    "silver"    },
-            { LogColor.Teal,      "teal"      },
-            { LogColor.White,     "white"     },
-            { LogColor.Yellow,    "yellow"    },
-        };
 
         // TODO - ? Maybe, to make this variables persistant between assembly recompilation, use: https://docs.unity3d.com/ScriptReference/Compilation.CompilationPipeline-compilationStarted.html
         public static bool SystemLogs;
