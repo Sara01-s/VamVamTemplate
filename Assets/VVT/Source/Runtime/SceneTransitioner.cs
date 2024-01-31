@@ -26,6 +26,7 @@ namespace VVT.Runtime {
 			_fadeOutCurve = fadeOutCurve;
 
 			_image.enabled = false;
+			_image.material.SetFloat(_isTransitionInverted, 0.0f);
 		}
 
 		internal IEnumerator CO_FadeIn() {

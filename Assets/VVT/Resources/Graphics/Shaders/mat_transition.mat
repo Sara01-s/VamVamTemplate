@@ -32,7 +32,7 @@ Material:
     m_Floats:
     - _Invert: 1
     - _Progess: 0.2
-    - _Progress: 0.000000059604645
+    - _Progress: 0.99251604
     - _ShapeSize: 0.042
     m_Colors: []
   m_BuildTextureStacks: []
