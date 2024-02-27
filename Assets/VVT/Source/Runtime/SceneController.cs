@@ -1,6 +1,7 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 using NaughtyAttributes;
+using EasyTransition;
 using UnityEngine;
 using VVT.Data;
 
@@ -11,21 +12,12 @@ namespace VVT.Runtime {
 		[field:SerializeField] public bool UseTransitions { get; set; }
 
 		[ShowIf(nameof(UseTransitions))]
-		[SerializeField] private UnityEngine.UI.Image _transitionImage;
-		[ShowIf(nameof(UseTransitions))]
-		[SerializeField] private AnimationCurve _fadeInCurve;
-		[ShowIf(nameof(UseTransitions))]
-		[SerializeField] private float _fadeInDuration;
-		[ShowIf(nameof(UseTransitions))]
-		[SerializeField] private float _fadeOutDuration;
-		[ShowIf(nameof(UseTransitions))]
-		[SerializeField] private AnimationCurve _fadeOutCurve;
+		[SerializeField] private TransitionSettings _transition;
 
 		[Space(20.0f)]
         [SerializeField] private Context _loadingContext;
 
         private ISettingsDataService _settingsDataService;
-		private SceneTransitioner _sceneTransitioner;
         private IGameDataService _gameDataService;
         private IContextService _contextService;
         
@@ -36,7 +28,7 @@ namespace VVT.Runtime {
             _settingsDataService = Services.Instance.GetService<ISettingsDataService>();
 
 			if (UseTransitions) {
-				_sceneTransitioner = new(_transitionImage, _fadeInDuration, _fadeOutDuration, _fadeInCurve, _fadeOutCurve);
+				UnityEngine.Assertions.Assert.IsNotNull(_transition, "Please assign a transition in inspector.");
 			}
         }
 
@@ -50,12 +42,17 @@ namespace VVT.Runtime {
 
         public void LoadScene(int sceneBuildIndex) {
 
-			int scenes = SceneManager.sceneCountInBuildSettings;
+			int scenesCount = SceneManager.sceneCountInBuildSettings;
             
-            if (!Comparator.IsBetween(sceneBuildIndex, -1, scenes)) {
-                Logs.LogError($"Scene Controller : Can't load scene with build index {sceneBuildIndex}, There are {scenes} scenes in Build Settings.", ErrorCode.BadArgument);
+			if (!sceneBuildIndex.between(-1, scenesCount)) {
+                Logs.LogError($"Scene Controller : Can't load scene with build index {sceneBuildIndex}, There are {scenesCount} scenes in Build Settings.", ErrorCode.BadArgument);
                 return;
             }
+
+			if (UseTransitions) {
+				TransitionManager.Instance().Transition(sceneBuildIndex, _transition, 0.0f);
+				return;
+			}
 
             StopAllCoroutines();
             StartCoroutine(CO_LoadScene(sceneBuildIndex));
@@ -97,12 +94,6 @@ namespace VVT.Runtime {
         }
 
 		private IEnumerator CO_LoadScene(int sceneBuildIndex) {
-
-			if (UseTransitions) {
-				StartCoroutine(_sceneTransitioner.CO_FadeOut());
-				yield return new WaitUntil(() => _sceneTransitioner.IsTransitionDone);
-			}
-
             Time.timeScale = 1.0f;
 
             _gameDataService.SaveData();
@@ -119,12 +110,6 @@ namespace VVT.Runtime {
                 yield return null;                              // Add delay to the scene load while is not ready
                 
             scene.allowSceneActivation = true;
-
-			if (UseTransitions) {
-				StartCoroutine(_sceneTransitioner.CO_FadeIn());
-				yield return new WaitUntil(() => _sceneTransitioner.IsTransitionDone);
-			}
-
             Logs.SystemLog($"Scene Controller : Scene \"{SceneManager.GetSceneByBuildIndex(sceneBuildIndex).name}\" loaded, make sure the scene has a SceneContextSetter");
         }
         

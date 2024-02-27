@@ -1,0 +1,18 @@
+{
+    "name": "EasyTransitionsEditor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:bdc55ce401a55524181fb69472347dd3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
