@@ -65,9 +65,9 @@ namespace VVT.Runtime {
                 Debug.LogError($"{Prefix} Failed to load volume for {_exposedMasterVolume}");
             }
 
-            ChangeMixerVolume(Mixer.Music    , VVTMath.DbToLinear(settingsData.AudioMusicVolume));
-            ChangeMixerVolume(Mixer.Ambience , VVTMath.DbToLinear(settingsData.AudioAmbienceVolume));
-            ChangeMixerVolume(Mixer.SFX      , VVTMath.DbToLinear(settingsData.AudioSFXVolume));
+            ChangeMixerVolume(Mixer.Music    , VVTMath.dbToLinear(settingsData.AudioMusicVolume));
+            ChangeMixerVolume(Mixer.Ambience , VVTMath.dbToLinear(settingsData.AudioAmbienceVolume));
+            ChangeMixerVolume(Mixer.SFX      , VVTMath.dbToLinear(settingsData.AudioSFXVolume));
         }
 
         public void SaveData(SettingsData settingsData) {
@@ -95,7 +95,7 @@ namespace VVT.Runtime {
         }
 
         public void ChangeMixerVolume(Mixer mixer, float newVolume) {
-            var volumeInDBs = VVTMath.LinearToDb(newVolume);
+            var volumeInDBs = VVTMath.linearToDb(newVolume);
             
             // If master volume is target
             if (mixer == Mixer.Master) {
@@ -123,7 +123,7 @@ namespace VVT.Runtime {
                     Debug.LogError($"{Prefix} Failed to get {mixer} mixer data.");
                     return 0.0f;
                 }
-                else return VVTMath.DbToLinear(masterVolume);
+                else return VVTMath.dbToLinear(masterVolume);
             }
 
             // Everything else
@@ -136,7 +136,7 @@ namespace VVT.Runtime {
                 Debug.LogError($"{Prefix} Failed to get from {mixerData.ExposedValue}");
                 return 0.0f;
             }
-            else return VVTMath.DbToLinear(volume);
+            else return VVTMath.dbToLinear(volume);
         }
 
         private void GenerateAllAudioBanksFor(Mixer mixer) {
