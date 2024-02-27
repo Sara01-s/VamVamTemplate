@@ -6,13 +6,15 @@ using NSubstitute;
 namespace VVT.RuntimeTests {
 
     public class Test_Timer {
+		
+		private const float TIMER_DURATION = 10.0F;
 
         private Timer _timer;
 		private System.Action _onTimerEndCallback;
 
         [SetUp]
         public void Setup() {
-            _timer = new Timer(10.0f);
+            _timer = new Timer(TIMER_DURATION);
 			_onTimerEndCallback = Substitute.For<System.Action>();
 
 			_timer.OnTimerEnd += _onTimerEndCallback;
@@ -20,8 +22,8 @@ namespace VVT.RuntimeTests {
 
         [UnityTest]
         public IEnumerator Timer_InitializesCorrectly() {
-            Assert.AreEqual(10f, _timer.DurationSeconds);
-            Assert.AreEqual(10f, _timer.RemainingSeconds);
+            Assert.AreEqual(TIMER_DURATION, _timer.DurationSeconds);
+            Assert.AreEqual(TIMER_DURATION, _timer.RemainingSeconds);
             Assert.IsFalse(_timer.IsTicking);
             yield return null;
         }
@@ -85,7 +87,7 @@ namespace VVT.RuntimeTests {
             yield return null;
 
             Assert.IsFalse(_timer.IsTicking);
-            Assert.AreEqual(10.0f, _timer.RemainingSeconds);
+            Assert.AreEqual(TIMER_DURATION, _timer.RemainingSeconds);
         }
     }
 }
