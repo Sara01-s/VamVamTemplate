@@ -18,6 +18,10 @@ namespace VVT {
         /// </summary>
         public const float PHI = 1.618033988749F;
 
+        public const float PI = 3.14159265358979F;
+        public const float TAU = PI * 2.0F;
+
+
         public const float INFINITY = float.PositiveInfinity;
         public const float NEG_INFINITY = float.NegativeInfinity;
         public static readonly float EPSILON = UnityEngineInternal.MathfInternal.IsFlushToZeroEnabled ? UnityEngineInternal.MathfInternal.FloatMinNormal : UnityEngineInternal.MathfInternal.FloatMinDenormal;
@@ -316,6 +320,24 @@ namespace VVT {
 			}
 
 			return output;
+		}
+
+		// TODO : Implement all Unity.Mathematics.math functions.
+		// In that way, the consumer only needs to implement this library.
+		public static float abs(float x) {
+			return Unity.Mathematics.math.abs(x);
+		}
+
+		public static float sin(float x) {
+			return Unity.Mathematics.math.sin(x);
+		}
+
+		public static float cos(float x) {
+			return Unity.Mathematics.math.cos(x);
+		}
+		
+		public static float log(float x) {
+			return Unity.Mathematics.math.log(x);
 		}
 
     }

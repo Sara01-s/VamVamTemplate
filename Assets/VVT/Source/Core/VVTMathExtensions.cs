@@ -16,6 +16,11 @@ namespace VVT {
             return pow(x, 2.0f);
         }
 
+		[MethodImpl(INLINE)]
+        public static float powf(this float x, float q) {
+            return pow(x, q);
+        }
+
         [MethodImpl(INLINE)]
         public static int sqr(this int x) {
             return x * x;
@@ -138,7 +143,8 @@ namespace VVT {
         public static Vector3 dirTo(this Vector3 v, Vector3 target) {
             return (target - v).normalized;
         }
-        #endregion
+		#endregion
+
 
         #region Swizzling
         [MethodImpl(INLINE)]
@@ -182,6 +188,7 @@ namespace VVT {
         }
         #endregion
 
+
         #region Colors
         [MethodImpl(INLINE)]
         public static Color withAlpha(this Color c, float a) {
@@ -193,6 +200,28 @@ namespace VVT {
             return ColorUtility.ToHtmlStringRGBA(c);
         }
         #endregion
+
+        #region Bool
+		[MethodImpl(INLINE)]
+        public static float toFloat(this bool b) {
+			return b ? 1.0f : 0.0f;
+        }
+
+		[MethodImpl(INLINE)]
+        public static int toInt(this bool b) {
+			return b ? 1 : 0;
+        }
+
+		[MethodImpl(INLINE)]
+        public static float signf(this bool b) {
+			return b ? 1.0f : -1.0f;
+        }
+
+		[MethodImpl(INLINE)]
+        public static int sign(this bool b) {
+			return b ? 1 : -1;
+        }
+		#endregion
 
     }
 }

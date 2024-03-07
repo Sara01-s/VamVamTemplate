@@ -50,7 +50,7 @@ namespace VVT.Runtime {
             }
 
 			if (UseTransitions) {
-				TransitionManager.Instance().Transition(sceneBuildIndex, _transition, 0.0f);
+				TransitionManager.Instance().Transition(sceneBuildIndex, _transition, startDelay: 0.0f);
 				return;
 			}
 
@@ -107,12 +107,11 @@ namespace VVT.Runtime {
             yield return new WaitForSeconds(1.0f);                // ! FIXME - Delete this in an actual game
 
             while (scene.progress < 0.9f)
-                yield return null;                              // Add delay to the scene load while is not ready
+			yield return null;                              	  // Add delay to the scene load while is not ready
                 
             scene.allowSceneActivation = true;
             Logs.SystemLog($"Scene Controller : Scene \"{SceneManager.GetSceneByBuildIndex(sceneBuildIndex).name}\" loaded, make sure the scene has a SceneContextSetter");
         }
         
     }
-
 }

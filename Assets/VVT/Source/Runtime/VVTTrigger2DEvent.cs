@@ -11,8 +11,11 @@ namespace VVT {
 		[SerializeField, ShowIf(nameof(_useTag))] private string _tagToDetect;
 		[SerializeField, HideIf(nameof(_useTag))] private LayerMask _layerToDetect;
 
+		[Foldout("On Trigger2D Enter")]
 		[SerializeField] private UnityEvent<Collider2D> _onTriggerEnter2D;
+		[Foldout("On Trigger2D Stay")]
 		[SerializeField] private UnityEvent<Collider2D> _onTriggerStay2D;
+		[Foldout("On Trigger2D Exit")]
 		[SerializeField] private UnityEvent<Collider2D> _onTriggerExit2D;
 
 		private void Awake() {
